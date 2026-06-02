@@ -1,29 +1,42 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav } from "@/components/portfolio/Nav";
+import { Hero } from "@/components/portfolio/Hero";
+import { Marquee } from "@/components/portfolio/Marquee";
+import { About } from "@/components/portfolio/About";
+import { Skills } from "@/components/portfolio/Skills";
+import { Work } from "@/components/portfolio/Work";
+import { Experience } from "@/components/portfolio/Experience";
+import { Testimonials } from "@/components/portfolio/Testimonials";
+import { Contact } from "@/components/portfolio/Contact";
+import { Footer } from "@/components/portfolio/Footer";
+import { CursorGlow } from "@/components/portfolio/CursorGlow";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Codi Tech — Cinematic Frontend Developer" },
+      { name: "description", content: "Codi Tech is a frontend developer designing digital experiences that feel alive — motion-first, cinematic, premium." },
+      { property: "og:title", content: "Codi Tech — Cinematic Frontend Developer" },
+      { property: "og:description", content: "Designing digital experiences that feel alive." },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main className="relative noise">
+      <CursorGlow />
+      <Nav />
+      <Hero />
+      <Marquee />
+      <About />
+      <Skills />
+      <Work />
+      <Experience />
+      <Testimonials />
+      <Contact />
+      <Footer />
+    </main>
   );
 }

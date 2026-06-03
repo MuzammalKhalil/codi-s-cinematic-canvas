@@ -80,11 +80,15 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Codi Tech — Frontend Developer & Cinematic Web Engineer" },
       { name: "description", content: "Codi Tech is a frontend developer crafting immersive, cinematic digital experiences with motion, depth, and premium interaction." },
       { name: "author", content: "Codi Tech" },
-      { property: "og:title", content: "Codi Tech — Frontend Developer" },
-      { property: "og:description", content: "Designing digital experiences that feel alive." },
+      { property: "og:title", content: "Codi Tech — Frontend Developer & Cinematic Web Engineer" },
+      { property: "og:description", content: "Codi Tech is a frontend developer crafting immersive, cinematic digital experiences with motion, depth, and premium interaction." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Codi Tech — Frontend Developer & Cinematic Web Engineer" },
+      { name: "twitter:description", content: "Codi Tech is a frontend developer crafting immersive, cinematic digital experiences with motion, depth, and premium interaction." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b80e5583-11ae-4a70-9f56-2f0b8f07cd8a/id-preview-54c79efa--5a12075e-271c-456a-9a79-f91c35f1c730.lovable.app-1780405890704.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/b80e5583-11ae-4a70-9f56-2f0b8f07cd8a/id-preview-54c79efa--5a12075e-271c-456a-9a79-f91c35f1c730.lovable.app-1780405890704.png" },
     ],
     links: [
       {

@@ -334,7 +334,7 @@ export function Packages() {
           const techLabel = technologies.find((t) => t.id === techKey)?.label;
           return (
             <div key={techKey} className="mb-16">
-              <h2 className="text-2xl md:text-3xl font-display font-semibold mb-8">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold mb-8 text-center">
                 {techLabel}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">

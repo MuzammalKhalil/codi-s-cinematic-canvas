@@ -75,26 +75,55 @@ export function Services() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, i) => (
-            <motion.a
-              key={service.number}
-              href={service.href}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
-              whileHover={{ y: -8, backgroundColor: "rgba(255,255,255,0.03)" }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-black/20 p-6 transition-all"
-            >
-              <span className="text-6xl font-display font-bold text-muted-foreground/20 group-hover:text-primary/30 transition-colors">
-                {service.number}
-              </span>
-              <h3 className="text-xl font-display font-semibold mt-2 group-hover:text-primary transition-colors">
-                {service.title}
-              </h3>
-              <p className="text-muted-foreground text-sm mt-2">{service.description}</p>
-            </motion.a>
-          ))}
+          {services.map((service, i) => {
+            // For lg: 4 columns, md: 2 columns
+            const getAnimationProps = () => {
+              const width = typeof window !== "undefined" ? window.innerWidth : 1024;
+              let initial;
+              
+              if (width >= 1024) {
+                const col = i % 4;
+                if (col === 0) initial = { opacity: 0, x: -50 };
+                else if (col === 3) initial = { opacity: 0, x: 50 };
+                else initial = { opacity: 0, y: 20 };
+              } else if (width >= 768) {
+                const col = i % 2;
+                if (col === 0) initial = { opacity: 0, x: -50 };
+                else if (col === 1) initial = { opacity: 0, x: 50 };
+                else initial = { opacity: 0, y: 20 };
+              } else {
+                initial = { opacity: 0, y: 20 };
+              }
+              
+              return {
+                initial,
+                whileInView: { opacity: 1, x: 0, y: 0 },
+              };
+            };
+            
+            const { initial, whileInView } = typeof window !== "undefined" ? getAnimationProps() : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, x: 0, y: 0 } };
+
+            return (
+              <motion.a
+                key={service.number}
+                href={service.href}
+                initial={initial}
+                whileInView={whileInView}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                whileHover={{ y: -8, backgroundColor: "rgba(255,255,255,0.03)" }}
+                className="group relative overflow-hidden rounded-2xl border border-border bg-black/20 p-6 transition-all"
+              >
+                <span className="text-6xl font-display font-bold text-muted-foreground/20 group-hover:text-primary/30 transition-colors">
+                  {service.number}
+                </span>
+                <h3 className="text-xl font-display font-semibold mt-2 group-hover:text-primary transition-colors">
+                  {service.title}
+                </h3>
+                <p className="text-muted-foreground text-sm mt-2">{service.description}</p>
+              </motion.a>
+            );
+          })}
         </div>
       </div>
     </section>

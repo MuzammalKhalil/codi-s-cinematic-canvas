@@ -299,14 +299,14 @@ function PackageCard({ name, price, description, features }: { name: string; pri
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       whileHover={{ y: -8, backgroundColor: "rgba(255,255,255,0.03)" }}
-      className="glass rounded-3xl p-8 border border-border flex flex-col h-full"
+      className="glass rounded-3xl p-8 border border-border flex flex-col h-full text-center"
     >
       <h3 className="font-display text-xl font-semibold mb-2">{name}</h3>
       <p className="text-4xl font-display font-bold text-primary mb-2">{price}</p>
       <p className="text-muted-foreground text-sm mb-6">{description}</p>
       <ul className="space-y-3 mb-auto flex-grow">
         {features.map((feature, i) => (
-          <li key={i} className="text-muted-foreground text-sm flex items-start gap-2">
+          <li key={i} className="text-muted-foreground text-sm flex items-start gap-2 justify-center">
             <span className="text-primary mt-1">✓</span>
             {feature}
           </li>

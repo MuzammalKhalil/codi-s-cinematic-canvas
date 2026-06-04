@@ -1,42 +1,16 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Nav } from "@/components/portfolio/Nav";
-import { Footer } from "@/components/portfolio/Footer";
-import { CursorGlow } from "@/components/portfolio/CursorGlow";
-import { motion } from "framer-motion";
+import { ServiceLayout } from "@/components/portfolio/ServiceLayout";
 
 export const Route = createFileRoute("/e-commerce")({
   head: () => ({
     meta: [
       { title: "E-Commerce — Codi Tech" },
-      { description: "High-converting online stores built for growth." },
+      { name: "description", content: "High-performing e-commerce platforms designed for speed, security, and seamless shopping experiences." },
     ],
   }),
   component: ECommercePage,
 });
 
 function ECommercePage() {
-  return (
-    <main className="relative noise min-h-screen">
-      <CursorGlow />
-      <Nav />
-      <section className="relative z-10 py-32 px-6">
-        <div className="mx-auto max-w-7xl">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="text-center mb-16"
-          >
-            <span className="text-xs uppercase tracking-[0.3em] text-primary mb-4 block">What we do</span>
-            <h1 className="text-4xl md:text-6xl font-display font-semibold mb-4">
-              E-Commerce
-            </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              High-converting online stores built for growth.
-            </p>
-          </motion.div>
-        </div>
-      </section>
-      <Footer />
-    </main>
-  );
+  return <ServiceLayout serviceKey="ecommerce" />;
 }

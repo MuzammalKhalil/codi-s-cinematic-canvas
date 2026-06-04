@@ -9,12 +9,66 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as WebsiteMaintenanceRouteImport } from './routes/website-maintenance'
+import { Route as WebsiteDevelopmentRouteImport } from './routes/website-development'
+import { Route as UiUxDesignRouteImport } from './routes/ui-ux-design'
+import { Route as ShopifyDevelopmentRouteImport } from './routes/shopify-development'
+import { Route as SeoOptimizationRouteImport } from './routes/seo-optimization'
 import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as ECommerceRouteImport } from './routes/e-commerce'
+import { Route as DigitalMarketingRouteImport } from './routes/digital-marketing'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as BrandingRouteImport } from './routes/branding'
 import { Route as IndexRouteImport } from './routes/index'
 
+const WebsiteMaintenanceRoute = WebsiteMaintenanceRouteImport.update({
+  id: '/website-maintenance',
+  path: '/website-maintenance',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const WebsiteDevelopmentRoute = WebsiteDevelopmentRouteImport.update({
+  id: '/website-development',
+  path: '/website-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UiUxDesignRoute = UiUxDesignRouteImport.update({
+  id: '/ui-ux-design',
+  path: '/ui-ux-design',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShopifyDevelopmentRoute = ShopifyDevelopmentRouteImport.update({
+  id: '/shopify-development',
+  path: '/shopify-development',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SeoOptimizationRoute = SeoOptimizationRouteImport.update({
+  id: '/seo-optimization',
+  path: '/seo-optimization',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const PackagesRoute = PackagesRouteImport.update({
   id: '/packages',
   path: '/packages',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ECommerceRoute = ECommerceRouteImport.update({
+  id: '/e-commerce',
+  path: '/e-commerce',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DigitalMarketingRoute = DigitalMarketingRouteImport.update({
+  id: '/digital-marketing',
+  path: '/digital-marketing',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BrandingRoute = BrandingRouteImport.update({
+  id: '/branding',
+  path: '/branding',
   getParentRoute: () => rootRouteImport,
 } as any)
 const IndexRoute = IndexRouteImport.update({
@@ -25,37 +79,170 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/branding': typeof BrandingRoute
+  '/contact': typeof ContactRoute
+  '/digital-marketing': typeof DigitalMarketingRoute
+  '/e-commerce': typeof ECommerceRoute
   '/packages': typeof PackagesRoute
+  '/seo-optimization': typeof SeoOptimizationRoute
+  '/shopify-development': typeof ShopifyDevelopmentRoute
+  '/ui-ux-design': typeof UiUxDesignRoute
+  '/website-development': typeof WebsiteDevelopmentRoute
+  '/website-maintenance': typeof WebsiteMaintenanceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/branding': typeof BrandingRoute
+  '/contact': typeof ContactRoute
+  '/digital-marketing': typeof DigitalMarketingRoute
+  '/e-commerce': typeof ECommerceRoute
   '/packages': typeof PackagesRoute
+  '/seo-optimization': typeof SeoOptimizationRoute
+  '/shopify-development': typeof ShopifyDevelopmentRoute
+  '/ui-ux-design': typeof UiUxDesignRoute
+  '/website-development': typeof WebsiteDevelopmentRoute
+  '/website-maintenance': typeof WebsiteMaintenanceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/branding': typeof BrandingRoute
+  '/contact': typeof ContactRoute
+  '/digital-marketing': typeof DigitalMarketingRoute
+  '/e-commerce': typeof ECommerceRoute
   '/packages': typeof PackagesRoute
+  '/seo-optimization': typeof SeoOptimizationRoute
+  '/shopify-development': typeof ShopifyDevelopmentRoute
+  '/ui-ux-design': typeof UiUxDesignRoute
+  '/website-development': typeof WebsiteDevelopmentRoute
+  '/website-maintenance': typeof WebsiteMaintenanceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/packages'
+  fullPaths:
+    | '/'
+    | '/branding'
+    | '/contact'
+    | '/digital-marketing'
+    | '/e-commerce'
+    | '/packages'
+    | '/seo-optimization'
+    | '/shopify-development'
+    | '/ui-ux-design'
+    | '/website-development'
+    | '/website-maintenance'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/packages'
-  id: '__root__' | '/' | '/packages'
+  to:
+    | '/'
+    | '/branding'
+    | '/contact'
+    | '/digital-marketing'
+    | '/e-commerce'
+    | '/packages'
+    | '/seo-optimization'
+    | '/shopify-development'
+    | '/ui-ux-design'
+    | '/website-development'
+    | '/website-maintenance'
+  id:
+    | '__root__'
+    | '/'
+    | '/branding'
+    | '/contact'
+    | '/digital-marketing'
+    | '/e-commerce'
+    | '/packages'
+    | '/seo-optimization'
+    | '/shopify-development'
+    | '/ui-ux-design'
+    | '/website-development'
+    | '/website-maintenance'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  BrandingRoute: typeof BrandingRoute
+  ContactRoute: typeof ContactRoute
+  DigitalMarketingRoute: typeof DigitalMarketingRoute
+  ECommerceRoute: typeof ECommerceRoute
   PackagesRoute: typeof PackagesRoute
+  SeoOptimizationRoute: typeof SeoOptimizationRoute
+  ShopifyDevelopmentRoute: typeof ShopifyDevelopmentRoute
+  UiUxDesignRoute: typeof UiUxDesignRoute
+  WebsiteDevelopmentRoute: typeof WebsiteDevelopmentRoute
+  WebsiteMaintenanceRoute: typeof WebsiteMaintenanceRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/website-maintenance': {
+      id: '/website-maintenance'
+      path: '/website-maintenance'
+      fullPath: '/website-maintenance'
+      preLoaderRoute: typeof WebsiteMaintenanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/website-development': {
+      id: '/website-development'
+      path: '/website-development'
+      fullPath: '/website-development'
+      preLoaderRoute: typeof WebsiteDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ui-ux-design': {
+      id: '/ui-ux-design'
+      path: '/ui-ux-design'
+      fullPath: '/ui-ux-design'
+      preLoaderRoute: typeof UiUxDesignRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shopify-development': {
+      id: '/shopify-development'
+      path: '/shopify-development'
+      fullPath: '/shopify-development'
+      preLoaderRoute: typeof ShopifyDevelopmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/seo-optimization': {
+      id: '/seo-optimization'
+      path: '/seo-optimization'
+      fullPath: '/seo-optimization'
+      preLoaderRoute: typeof SeoOptimizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/packages': {
       id: '/packages'
       path: '/packages'
       fullPath: '/packages'
       preLoaderRoute: typeof PackagesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/e-commerce': {
+      id: '/e-commerce'
+      path: '/e-commerce'
+      fullPath: '/e-commerce'
+      preLoaderRoute: typeof ECommerceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/digital-marketing': {
+      id: '/digital-marketing'
+      path: '/digital-marketing'
+      fullPath: '/digital-marketing'
+      preLoaderRoute: typeof DigitalMarketingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/branding': {
+      id: '/branding'
+      path: '/branding'
+      fullPath: '/branding'
+      preLoaderRoute: typeof BrandingRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/': {
@@ -70,7 +257,16 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  BrandingRoute: BrandingRoute,
+  ContactRoute: ContactRoute,
+  DigitalMarketingRoute: DigitalMarketingRoute,
+  ECommerceRoute: ECommerceRoute,
   PackagesRoute: PackagesRoute,
+  SeoOptimizationRoute: SeoOptimizationRoute,
+  ShopifyDevelopmentRoute: ShopifyDevelopmentRoute,
+  UiUxDesignRoute: UiUxDesignRoute,
+  WebsiteDevelopmentRoute: WebsiteDevelopmentRoute,
+  WebsiteMaintenanceRoute: WebsiteMaintenanceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

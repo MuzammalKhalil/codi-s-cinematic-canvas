@@ -389,12 +389,11 @@ export function ServiceLayout({ serviceKey }: ServiceLayoutProps) {
             <p className="text-primary text-xs uppercase tracking-[0.3em] mb-6">
               [ Let’s Build Something Great ]
             </p>
-            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl leading-none uppercase max-w-3xl mx-auto font-bold">
-              YOUR DIGITAL PLATFORM <br />
-              <span className="text-primary glow-text">SHOULD FEEL PREMIUM.</span>
+            <h2 className="font-display text-3xl sm:text-5xl lg:text-6xl leading-tight uppercase max-w-4xl mx-auto font-bold text-foreground">
+              {data.cta.title}
             </h2>
             <p className="mx-auto mt-8 max-w-xl text-muted-foreground text-sm sm:text-base leading-relaxed font-sans">
-              We build visual stories and high-performance products that connect, perform, and elevate your brand to the next level. Let's make it happen.
+              {data.cta.subtitle}
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Link

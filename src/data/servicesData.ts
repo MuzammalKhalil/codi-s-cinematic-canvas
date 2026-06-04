@@ -18,148 +18,156 @@ export interface ServiceData {
     title: string;
     steps: Array<{ number: string; title: string; description: string }>;
   };
+  cta: {
+    title: string;
+    subtitle: string;
+  };
 }
 
 export const servicesData: Record<string, ServiceData> = {
   "website-development": {
     hero: {
-      badge: "Premium Website Development",
-      title: "WE BUILD MODERN WEBSITES THAT GROW BRANDS",
-      subtitle: "We create premium websites with modern UI/UX, fast performance, responsive layouts, and scalable development solutions for startups, businesses, and digital brands.",
+      badge: "Premium Website Engineering",
+      title: "ENGINEERING HIGH-PERFORMANCE DIGITAL EXPERIENCE LABS",
+      subtitle: "We architect custom React & Next.js web systems that load instantly, engage deeply, and convert traffic into scalable business value.",
       stats: [
-        { value: "150+", label: "Projects Delivered" },
-        { value: "45+", label: "Global Clients" },
-        { value: "98%", label: "Client Satisfaction" }
+        { value: "100%", label: "Custom Developed" },
+        { value: "<1s", label: "Average Load Time" },
+        { value: "30+", label: "Success Partners" }
       ]
     },
     about: {
-      title: "CUSTOM WEBSITE DEVELOPMENT",
-      description: "We develop high-performance websites designed for growth, engagement, and conversions. Every project is built with modern technologies, premium aesthetics, and optimized performance.",
+      title: "SCALABLE & CLEAN CODE STRUCTURES",
+      description: "Codi Tech is dedicated to building robust and scalable web applications. We reject generic templates and builder bloat, writing semantic, hand-crafted code optimized for modern search engines and flawless user interactions.",
       features: [
-        "Responsive Design",
-        "SEO Optimized",
-        "Fast Loading",
-        "Modern UI/UX"
+        "Next-Gen Frameworks",
+        "Speed Optimization",
+        "Search-Engine Ready",
+        "Semantic Structure"
       ]
     },
     solutions: {
-      title: "WEBSITE DEVELOPMENT SOLUTIONS",
+      title: "FULL-STACK WEBCRAFT SOLUTIONS",
       cards: [
         {
-          title: "Business Websites",
-          description: "Professional websites for startups, agencies, and companies.",
-          icon: "briefcase"
-        },
-        {
-          title: "WordPress Development",
-          description: "Custom WordPress websites with easy content management.",
-          icon: "globe"
-        },
-        {
-          title: "eCommerce Stores",
-          description: "Modern online stores designed for maximum conversions.",
-          icon: "shopping-bag"
-        },
-        {
-          title: "Landing Pages",
-          description: "High-converting landing pages for marketing campaigns.",
-          icon: "layers"
-        },
-        {
-          title: "Custom Web Apps",
-          description: "Advanced web applications with scalable functionality.",
+          title: "Custom React Apps",
+          description: "Next.js and Vite platforms tailored to unique business flows.",
           icon: "code-xml"
         },
         {
-          title: "Website Redesign",
-          description: "Transform outdated websites into premium experiences.",
+          title: "Enterprise Portals",
+          description: "Secure, high-bandwidth corporate hubs for seamless workflows.",
+          icon: "globe"
+        },
+        {
+          title: "Performance Optimization",
+          description: "Speed audits and migration to modern headless tech stacks.",
+          icon: "zap"
+        },
+        {
+          title: "Tailored CMS Integration",
+          description: "Custom dashboard management built on headless WordPress or Sanity.",
+          icon: "layers"
+        },
+        {
+          title: "Interactive Web Apps",
+          description: "Highly responsive user dashboards and dynamic data portals.",
+          icon: "monitor"
+        },
+        {
+          title: "Legacy App Modernization",
+          description: "Upgrading old codebases to modern design systems and fast runtimes.",
           icon: "refresh-cw"
         }
       ]
     },
     process: {
-      title: "OUR SIMPLE FIVE-STEP PROCESS",
+      title: "OUR CORE ENGINEERING METHODOLOGY",
       steps: [
         {
           number: "01",
           title: "Discovery",
-          description: "Understanding business goals and project requirements."
+          description: "Deep-diving into your target audience and system requirements."
         },
         {
           number: "02",
-          title: "Design",
-          description: "Creating modern UI/UX layouts and user experiences."
+          title: "Architecture",
+          description: "Structuring state, API flows, and component hierarchies."
         },
         {
           number: "03",
           title: "Development",
-          description: "Building responsive and scalable website solutions."
+          description: "Writing modular, type-safe, and clean code with Tailwind styles."
         },
         {
           number: "04",
-          title: "Testing",
-          description: "Optimizing performance and fixing usability issues."
+          title: "QA Testing",
+          description: "Rigorous cross-browser, speed, and usability audits."
         },
         {
           number: "05",
           title: "Launch",
-          description: "Deploying the project with ongoing support services."
+          description: "Deploying via secure, edge-hosted CDNs with continuous deployment setups."
         }
       ]
+    },
+    cta: {
+      title: "LET'S BUILD A HIGHER STANDARD OF WEB",
+      subtitle: "Ready to replace slow, outdated templates with a custom web experience that performs? Reach out today."
     }
   },
   "ui-ux-design": {
     hero: {
-      badge: "Creative UI/UX Design",
-      title: "WE DESIGN MODERN INTERFACES THAT ENGAGE",
-      subtitle: "Crafting intuitive and visually stunning user experiences that drive user satisfaction and business growth through user-centric design principles.",
+      badge: "High-Fidelity Interface Design",
+      title: "CRAFTING KINETIC INTERFACES THAT COMMUNICATE BRAND VALUE",
+      subtitle: "We design pixel-perfect, motion-first digital products. We bridge the gap between creative visual art and logical, user-friendly experiences.",
       stats: [
-        { value: "200+", label: "Interfaces Designed" },
-        { value: "60+", label: "Brand Identities" },
-        { value: "100%", label: "User Focus" }
+        { value: "150+", label: "Product Prototypes" },
+        { value: "20+", label: "Design Systems Built" },
+        { value: "100%", label: "User Focused" }
       ]
     },
     about: {
-      title: "USER-CENTRIC EXPERIENCE DESIGN",
-      description: "Our design process focuses on understanding your users' needs and translating them into seamless digital interactions that are both beautiful and functional.",
+      title: "BEAUTY POWERED BY USER BEHAVIOR",
+      description: "We believe interfaces should not only look premium but feel organic to navigate. Our design studio combines deep user research with wireframing and interactive motion to build seamless digital journeys.",
       features: [
-        "User Research",
-        "Wireframing",
-        "Prototyping",
-        "Visual Identity"
+        "Interactive Prototyping",
+        "Design System Craft",
+        "User Journey Maps",
+        "Motion Guidelines"
       ]
     },
     solutions: {
-      title: "UI/UX DESIGN SOLUTIONS",
+      title: "CREATIVE DESIGN SOLUTIONS",
       cards: [
         {
-          title: "Mobile App Design",
-          description: "Intuitive interfaces for iOS and Android applications.",
-          icon: "smartphone"
-        },
-        {
-          title: "Web Application Design",
-          description: "Scalable and responsive designs for complex web tools.",
-          icon: "monitor"
-        },
-        {
-          title: "Dashboard Design",
-          description: "Clean and data-driven administrative interfaces.",
+          title: "SaaS Dashboard Design",
+          description: "Simplifying complex workflows into clean, data-driven interfaces.",
           icon: "panels-top-left"
         },
         {
-          title: "Interaction Design",
-          description: "Engaging animations and micro-interactions.",
+          title: "Mobile App Design",
+          description: "Native iOS and Android app experiences focused on tactile interactions.",
+          icon: "smartphone"
+        },
+        {
+          title: "Tactile Web Layouts",
+          description: "Premium brand landing pages designed to showcase visual identity.",
+          icon: "palette"
+        },
+        {
+          title: "Interactive Prototypes",
+          description: "High-fidelity Figma prototypes representing final product animations.",
           icon: "mouse-pointer2"
         },
         {
           title: "Design Systems",
-          description: "Consistent and reusable component libraries.",
+          description: "Reusable UI kits and component token guides for unified scaling.",
           icon: "layers"
         },
         {
-          title: "UX Audit",
-          description: "Expert analysis to improve existing user journeys.",
+          title: "UX Audit & Optimization",
+          description: "Analyzing heatmaps and logs to find and fix user drop-off points.",
           icon: "search"
         }
       ]
@@ -170,431 +178,451 @@ export const servicesData: Record<string, ServiceData> = {
         {
           number: "01",
           title: "Research",
-          description: "Analyzing user behavior and market trends."
+          description: "Empathizing with users to map behaviors and identify pain points."
         },
         {
           number: "02",
-          title: "Wireframe",
-          description: "Mapping out structure and user flows."
+          title: "Wireframing",
+          description: "Creating low-fidelity layouts to align on navigation hierarchy."
         },
         {
           number: "03",
-          title: "Visual Design",
-          description: "Crafting high-fidelity UI and aesthetics."
+          title: "Visual Direction",
+          description: "Defining color mood boards, typography, and premium styling."
         },
         {
           number: "04",
-          title: "Prototype",
-          description: "Building interactive models for testing."
+          title: "High-Fi Mockups",
+          description: "Crafting beautiful, pixel-perfect layouts for all responsive states."
         },
         {
           number: "05",
-          title: "Iterate",
-          description: "Refining based on feedback and testing."
+          title: "Prototype",
+          description: "Linking interactions and motion curves to test user flow viability."
         }
       ]
+    },
+    cta: {
+      title: "DESIGN EXPERIENCES THAT ENGAGE DEEPLY",
+      subtitle: "Turn complex interfaces into clean, beautiful, and high-converting products. Let's design it together."
     }
   },
   "seo-optimization": {
     hero: {
-      badge: "Strategic SEO Optimization",
-      title: "WE OPTIMIZE SEARCH RANKINGS TO GROW SALES",
-      subtitle: "Increase your organic visibility and drive high-quality traffic to your website with our data-driven SEO strategies and technical expertise.",
+      badge: "Data-Driven Rank Authority",
+      title: "DOMINATE SEARCH RESULTS TO ACCELERATE ORGANIC ACQUISITION",
+      subtitle: "We help ambitious brands rise to page one through rigorous search engine optimization, content strategy, and technical crawling health.",
       stats: [
-        { value: "85%", label: "Avg. Growth" },
-        { value: "500+", label: "Ranked Keywords" },
-        { value: "10x", label: "ROI Driven" }
+        { value: "3x+", label: "Average Traffic Lift" },
+        { value: "10k+", label: "Ranked Target Keywords" },
+        { value: "100%", label: "White-Hat Growth" }
       ]
     },
     about: {
-      title: "TECHNICAL & STRATEGIC SEO",
-      description: "We go beyond just keywords, focusing on technical health, content authority, and user intent to ensure sustainable long-term growth in search results.",
+      title: "SYSTEMIC SEARCH ENGINE DOMINANCE",
+      description: "Generic SEO tactics don't work. We focus on search intent, schema markup, site speed, and domain authority to build sustainable ranking growth that reduces your dependency on paid ads.",
       features: [
-        "Keyword Research",
-        "Technical SEO",
-        "Content Strategy",
-        "Link Building"
+        "Competitor Audits",
+        "Core Web Vitals SEO",
+        "Content Mapping",
+        "Link Equity Building"
       ]
     },
     solutions: {
-      title: "SEO SOLUTIONS",
+      title: "AUTHORITATIVE SEO SERVICES",
       cards: [
         {
-          title: "Technical SEO",
-          description: "Fixing site architecture, speed, and indexing issues.",
+          title: "Technical Site Audit",
+          description: "Analyzing indexing bugs, crawl budget, and redirect loops.",
           icon: "settings"
         },
         {
-          title: "On-Page SEO",
-          description: "Optimizing content and meta data for target keywords.",
+          title: "On-Page Optimization",
+          description: "Refining headings, semantic markup, and title tag density.",
           icon: "globe"
         },
         {
-          title: "Link Building",
-          description: "Building high-authority backlinks to boost credibility.",
-          icon: "share2"
-        },
-        {
-          title: "Content Marketing",
-          description: "Creating valuable content that ranks and converts.",
-          icon: "panels-top-left"
-        },
-        {
-          title: "Local SEO",
-          description: "Dominating local search results and Map listings.",
+          title: "Search Intent Mapping",
+          description: "Researching exact keywords your customers use when they are ready to buy.",
           icon: "target"
         },
         {
-          title: "Performance SEO",
-          description: "Continuous monitoring and data-driven adjustments.",
+          title: "Link Building Campaigns",
+          description: "Earning high-quality backlinks from trusted editorial platforms.",
+          icon: "share2"
+        },
+        {
+          title: "Content Authority Engine",
+          description: "Drafting search-optimized articles that position you as an expert.",
+          icon: "panels-top-left"
+        },
+        {
+          title: "Performance Tracking",
+          description: "Providing clear dashboard analytics and growth insights.",
           icon: "trending-up"
         }
       ]
     },
     process: {
-      title: "OUR DATA-DRIVEN SEO PROCESS",
+      title: "OUR STRATEGIC SEARCH ROADMAP",
       steps: [
         {
           number: "01",
           title: "Audit",
-          description: "Comprehensive analysis of current performance."
+          description: "Inspecting site health, index status, and competitor backlink profiles."
         },
         {
           number: "02",
-          title: "Strategy",
-          description: "Developing a custom roadmap for growth."
+          title: "Keywords",
+          description: "Mapping out high-value, high-intent keywords to target."
         },
         {
           number: "03",
-          title: "Execution",
-          description: "Implementing technical and content updates."
+          title: "Optimization",
+          description: "Fixing technical code issues and updating existing pages."
         },
         {
           number: "04",
-          title: "Monitoring",
-          description: "Tracking rankings and traffic movements."
+          title: "Link Acquisition",
+          description: "Running PR outreach campaigns to drive domain authority."
         },
         {
           number: "05",
-          title: "Reporting",
-          description: "Monthly insights and strategic refinements."
+          title: "Monitor & Refine",
+          description: "Reviewing search console data to scale top-performing pages."
         }
       ]
+    },
+    cta: {
+      title: "STOP HIDING FROM YOUR CLIENTS",
+      subtitle: "Your target audience is actively searching for your services. Let's make sure they find your website first."
     }
   },
   "branding": {
     hero: {
-      badge: "Unique Brand Identity",
-      title: "WE CRAFT DISTINCT IDENTITIES THAT LAST",
-      subtitle: "We build memorable brands that connect with your audience and stand out in the marketplace through strategic design and storytelling.",
+      badge: "Premium Visual Identity",
+      title: "CRAFTING AUTHENTIC BRAND SYSTEMS THAT LEAVE AN IMPRESSION",
+      subtitle: "We shape memorable brand stories and visual design systems that connect with target audiences and differentiate you from competitors.",
       stats: [
-        { value: "100+", label: "Brand Logos" },
-        { value: "15+", label: "Industries" },
-        { value: "Unique", label: "Storytelling" }
+        { value: "50+", label: "Identity Systems" },
+        { value: "100%", label: "Original Design" },
+        { value: "Custom", label: "Brand Voice" }
       ]
     },
     about: {
-      title: "STRATEGIC BRAND BUILDING",
-      description: "Branding is more than a logo. We create comprehensive visual and verbal identities that define who you are and what you stand for.",
+      title: "STRATEGIC VISUAL COMMUNICATION",
+      description: "Great branding goes beyond logo design. We build comprehensive systems—including color science, typography guidelines, and messaging tone—to give your company a strong, uniform digital voice.",
       features: [
-        "Logo Design",
-        "Brand Strategy",
-        "Visual Identity",
-        "Voice & Tone"
+        "Bespoke Logo Mark",
+        "Color Psychology",
+        "Typography Systems",
+        "Voice & Style Guides"
       ]
     },
     solutions: {
-      title: "BRANDING SOLUTIONS",
+      title: "COMPLETE BRAND SUITE",
       cards: [
         {
-          title: "Logo Design",
-          description: "Iconic and scalable logos that define your brand.",
+          title: "Brand Strategy",
+          description: "Aligning your business mission with market opportunities.",
+          icon: "target"
+        },
+        {
+          title: "Logo & Wordmark",
+          description: "Crafting timeless visual symbols that scale across physical & digital media.",
           icon: "sparkles"
         },
         {
-          title: "Visual Identity",
-          description: "Cohesive color palettes and typography systems.",
-          icon: "palette"
-        },
-        {
-          title: "Brand Guidelines",
-          description: "Comprehensive rules for brand consistency.",
+          title: "Identity Guidelines",
+          description: "Providing rules for color, typography, grids, and assets.",
           icon: "layers"
         },
         {
-          title: "Stationery Design",
-          description: "Professional business cards and collateral.",
-          icon: "briefcase"
-        },
-        {
-          title: "Social Media Kits",
-          description: "Branded assets for all social platforms.",
+          title: "Social Identity Kits",
+          description: "Consistent templates and banners for social profiles.",
           icon: "share2"
         },
         {
-          title: "Brand Voice",
-          description: "Defining your verbal identity and messaging.",
+          title: "Collateral Design",
+          description: "Professional business stationery, card layouts, and digital slide decks.",
+          icon: "briefcase"
+        },
+        {
+          title: "Brand Voice & Tone",
+          description: "Developing verbal identity frameworks to keep messaging consistent.",
           icon: "mouse-pointer2"
         }
       ]
     },
     process: {
-      title: "OUR STRATEGIC BRAND WORKFLOW",
+      title: "OUR IDENTITY CRAFT PROCESS",
       steps: [
         {
           number: "01",
           title: "Discovery",
-          description: "Uncovering your brand values and mission."
+          description: "Uncovering your brand history, target audience, and business values."
         },
         {
           number: "02",
-          title: "Concept",
-          description: "Developing initial creative directions."
+          title: "Direction",
+          description: "Creating mood boards to establish look and feel parameters."
         },
         {
           number: "03",
-          title: "Design",
-          description: "Refining visual elements and logo."
+          title: "Sketch & Design",
+          description: "Drafting concepts, vectorizing logo marks, and selecting fonts."
         },
         {
           number: "04",
-          title: "Assets",
-          description: "Creating final brand collateral."
+          title: "Brand Collateral",
+          description: "Applying the brand system to mockups and real-world assets."
         },
         {
           number: "05",
-          title: "Delivery",
-          description: "Providing full guidelines and files."
+          title: "Guidelines Handover",
+          description: "Delivering all vector resources alongside a comprehensive usage manual."
         }
       ]
+    },
+    cta: {
+      title: "GIVE YOUR BUSINESS A BOLD DIGITAL VOICE",
+      subtitle: "Ready to stand out with a professional brand identity that commands attention? Let's build your story."
     }
   },
   "ecommerce": {
     hero: {
-      badge: "High-Converting E-Commerce",
-      title: "WE BUILD ONLINE STORES THAT SELL",
-      subtitle: "Turn your visitors into customers with high-performance e-commerce platforms designed for speed, security, and seamless shopping experiences.",
+      badge: "High-Volume Store Engineering",
+      title: "ENGINEERING CONVERSION-OPTIMIZED ONLINE STOREFRONTS",
+      subtitle: "We build lightning-fast online shopping experiences designed to reduce cart abandonment and turn casual visitors into loyal customers.",
       stats: [
-        { value: "£1M+", label: "Client Revenue" },
-        { value: "50+", label: "Stores Launched" },
-        { value: "High", label: "Conversion" }
+        { value: "100%", label: "Secure Payment" },
+        { value: "Fast", label: "Mobile Checkout" },
+        { value: "30+", label: "Stores Launched" }
       ]
     },
     about: {
-      title: "PERFORMANCE E-COMMERCE",
-      description: "We specialize in building custom e-commerce solutions that handle high traffic and provide a smooth checkout process for your customers.",
+      title: "FRICTIONLESS DIGITAL COMMERCE",
+      description: "We believe e-commerce should be seamless for both you and your customers. Our custom stores feature clean database structures, optimized checkout funnels, and easy order management setups.",
       features: [
-        "Inventory Management",
-        "Secure Payments",
-        "Mobile Shopping",
-        "Sales Tracking"
+        "Checkout Funnel Tuning",
+        "Secure Merchant Gateways",
+        "Inventory Automations",
+        "Responsive Product Grids"
       ]
     },
     solutions: {
-      title: "E-COMMERCE SOLUTIONS",
+      title: "COMMERCE SOLUTIONS",
       cards: [
         {
-          title: "Custom Shopify",
-          description: "Bespoke Shopify themes for unique brands.",
+          title: "Custom Store Development",
+          description: "Bespoke online storefronts built with modern headless tech.",
           icon: "shopping-bag"
         },
         {
-          title: "WooCommerce",
-          description: "Powerful online stores built on WordPress.",
+          title: "Subscription Platforms",
+          description: "Configuring recurring payments and membership billing systems.",
           icon: "globe"
         },
         {
-          title: "Payment Gateways",
-          description: "Secure integration of major payment providers.",
+          title: "Gateway Integration",
+          description: "Connecting Stripe, PayPal, and modern payment APIs securely.",
           icon: "shield-check"
         },
         {
           title: "Cart Optimization",
-          description: "Reducing abandonment and boosting sales.",
+          description: "Minimizing checkout steps to boost sales conversion rates.",
           icon: "zap"
         },
         {
-          title: "Product Strategy",
-          description: "Effective layout and categorization for sales.",
-          icon: "target"
+          title: "Order System Automation",
+          description: "Syncing inventory counts and warehouse tracking streams.",
+          icon: "refresh-cw"
         },
         {
-          title: "Order Automation",
-          description: "Streamlining fulfillment and management.",
-          icon: "refresh-cw"
+          title: "Sales Analytics Hubs",
+          description: "Setting up detailed revenue and user-journey metrics.",
+          icon: "target"
         }
       ]
     },
     process: {
-      title: "OUR E-COMMERCE LAUNCH PROCESS",
+      title: "OUR COMMERCE LAUNCH ROADMAP",
       steps: [
         {
           number: "01",
-          title: "Analysis",
-          description: "Evaluating product catalog and market."
+          title: "Product Mapping",
+          description: "Reviewing catalog details, tax structures, and shipping paths."
         },
         {
           number: "02",
-          title: "Setup",
-          description: "Configuring platform and core features."
+          title: "Architecture",
+          description: "Structuring database collections, user accounts, and cart state."
         },
         {
           number: "03",
-          title: "Design",
-          description: "Crafting a conversion-focused UI."
+          title: "Interface Design",
+          description: "Designing conversion-first product listing and detail pages."
         },
         {
           number: "04",
-          title: "Integration",
-          description: "Connecting payments and shipping."
+          title: "Gateway Integration",
+          description: "Linking payment processors and automated tax systems."
         },
         {
           number: "05",
-          title: "Launch",
-          description: "Going live and starting optimizations."
+          title: "Testing & Launch",
+          description: "Executing end-to-end sandbox orders before going live."
         }
       ]
+    },
+    cta: {
+      title: "CONVERT VISITORS INTO BUYERS",
+      subtitle: "Maximize your digital sales potential with a fast, secure, and beautiful online store. Let's start building."
     }
   },
   "digital-marketing": {
     hero: {
-      badge: "Performance Digital Marketing",
-      title: "WE GROW YOUR AUDIENCE AND ROI",
-      subtitle: "Scale your business with multi-channel marketing campaigns that drive engagement, generate leads, and maximize return on investment.",
+      badge: "Performance-First Marketing",
+      title: "GROW YOUR AUDIENCE AND SCALE ad ROI",
+      subtitle: "We run highly optimized, data-backed campaigns that capture search intent, drive lead generation, and multiply your return on ad spend.",
       stats: [
-        { value: "5x", label: "Ad Spend ROI" },
-        { value: "1M+", label: "Reach Generated" },
-        { value: "Data", label: "Driven Results" }
+        { value: "100%", label: "Data-Driven Decisions" },
+        { value: "Multi", label: "Channel Ads" },
+        { value: "ROI", label: "Focused Campaigns" }
       ]
     },
     about: {
-      title: "INTEGRATED MARKETING STRATEGY",
-      description: "Our approach combines creative content with precise targeting to reach your ideal customers where they spend their time online.",
+      title: "ACQUISITION DRIVEN BY ANALYTICS",
+      description: "We don't guess with your advertising budget. We study customer data, construct persuasive copy, and implement rigorous A/B testing to ensure your ads convert at the lowest possible acquisition cost.",
       features: [
-        "Social Media Ads",
-        "Google Ads (PPC)",
-        "Email Marketing",
-        "Analytics & ROI"
+        "Targeted PPC Campaigns",
+        "Ad Copy Optimization",
+        "Lead Funnel Creation",
+        "Conversion Tracking"
       ]
     },
     solutions: {
-      title: "MARKETING SOLUTIONS",
+      title: "GROWTH ENGINE SOLUTIONS",
       cards: [
         {
-          title: "Social Media Ads",
-          description: "Targeted campaigns on Meta, TikTok, and more.",
-          icon: "share2"
-        },
-        {
-          title: "Google Ads",
-          description: "Search and Display ads to capture intent.",
+          title: "Paid Search Ads",
+          description: "Dominating Google Search for keywords with direct buyer intent.",
           icon: "target"
         },
         {
-          title: "Email Marketing",
-          description: "Automated flows that nurture and convert.",
+          title: "Social Ads Campaigns",
+          description: "Reaching qualified prospects on Meta, LinkedIn, and TikTok.",
+          icon: "share2"
+        },
+        {
+          title: "Funnels & Landing Pages",
+          description: "Building fast landing pages to capture incoming ad traffic.",
+          icon: "panels-top-left"
+        },
+        {
+          title: "Email Automations",
+          description: "Setting up welcome flows and drip sequences to nurture leads.",
           icon: "mail"
         },
         {
-          title: "Content Ads",
-          description: "Engaging video and image assets for growth.",
+          title: "Creative Ad Design",
+          description: "Developing engaging image and video ad layouts.",
           icon: "palette"
         },
         {
-          title: "Influencer Collabs",
-          description: "Connecting your brand with creators.",
-          icon: "globe"
-        },
-        {
-          title: "ROI Analytics",
-          description: "Detailed tracking of every penny spent.",
+          title: "Analytics Auditing",
+          description: "Configuring UTM tracking parameters to measure ROI.",
           icon: "trending-up"
         }
       ]
     },
     process: {
-      title: "OUR MARKETING GROWTH CYCLE",
+      title: "OUR PERFORMANCE MARKETING CYCLE",
       steps: [
         {
           number: "01",
           title: "Targeting",
-          description: "Defining your ideal customer profiles."
+          description: "Defining customer demographics, pain points, and buyer behaviors."
         },
         {
           number: "02",
-          title: "Creative",
-          description: "Developing ads and campaign assets."
+          title: "Ad Creation",
+          description: "Writing copy and designing creative resources for campaigns."
         },
         {
           number: "03",
           title: "Launch",
-          description: "Starting multi-channel campaigns."
+          description: "Deploying campaigns with budget guardrails to test assumptions."
         },
         {
           number: "04",
-          title: "Optimize",
-          description: "A/B testing and performance tuning."
+          title: "A/B Testing",
+          description: "Comparing headers, creatives, and landing pages to optimize conversion."
         },
         {
           number: "05",
-          title: "Scale",
-          description: "Increasing spend on winning strategies."
+          title: "Scaling",
+          description: "Allocating budget to the most profitable keywords and audiences."
         }
       ]
+    },
+    cta: {
+      title: "MULTIPLY YOUR CLIENT ACQUISITION",
+      subtitle: "Stop wasting money on unoptimized campaigns. Let's build a systematic growth engine for your company."
     }
   },
   "shopify-development": {
     hero: {
-      badge: "Expert Shopify Development",
-      title: "WE BUILD PREMIUM SHOPIFY EXPERIENCES",
-      subtitle: "Launch a world-class Shopify store with custom features, high-speed performance, and a design that reflects your brand's unique identity.",
+      badge: "Bespoke Shopify Engineering",
+      title: "BUILDING PREMIUM TAILORED SHOPIFY STOREFRONTS",
+      subtitle: "We craft fast, custom Liquid and Hydrogen store themes that reflect your brand identity while utilizing Shopify's powerful checkout backend.",
       stats: [
-        { value: "Shopify", label: "Partner Studio" },
-        { value: "40+", label: "Stores Built" },
-        { value: "99.9%", label: "Uptime Focus" }
+        { value: "Custom", label: "Liquid Theme Dev" },
+        { value: "Headless", label: "Shopify Hydrogen" },
+        { value: "Speed", label: "Optimized Setup" }
       ]
     },
     about: {
-      title: "CUSTOM SHOPIFY SOLUTIONS",
-      description: "We don't just use templates. We build custom Shopify themes and integrate apps that help your business scale effortlessly.",
+      title: "TAILORED SHOPIFY POWER",
+      description: "Avoid generic templates that bloat your site and slow down your store. Codi Tech builds custom Shopify storefronts from scratch, ensuring your page speed stays high and checkout is completely seamless.",
       features: [
-        "Custom Theme Dev",
-        "App Integration",
-        "Store Migration",
-        "Speed Optimization"
+        "Liquid Theme Engineering",
+        "App Stack Architecture",
+        "Seamless Store Migration",
+        "Core Web Vitals Audit"
       ]
     },
     solutions: {
-      title: "SHOPIFY SOLUTIONS",
+      title: "SHOPIFY ENGINE SERVICES",
       cards: [
         {
-          title: "Custom Themes",
-          description: "Bespoke storefronts that stand out.",
+          title: "Custom Liquid Themes",
+          description: "Building tailored templates optimized for visual brand identity.",
           icon: "code-xml"
         },
         {
-          title: "App Development",
-          description: "Building custom Shopify apps for you.",
+          title: "Shopify App Integrations",
+          description: "Integrating ERP, inventory, and marketing apps safely.",
           icon: "cpu"
         },
         {
-          title: "Store Setup",
-          description: "End-to-end configuration and launch.",
-          icon: "rocket"
-        },
-        {
-          title: "Migrations",
-          description: "Seamlessly moving to Shopify from elsewhere.",
-          icon: "refresh-cw"
-        },
-        {
-          title: "Speed Fixes",
-          description: "Making your Shopify store lightning fast.",
+          title: "Speed Optimization",
+          description: "Optimizing Liquid code and scripts to reduce load times.",
           icon: "zap"
         },
         {
-          title: "SEO for Shopify",
-          description: "Optimizing your store for search sales.",
+          title: "E-commerce Migrations",
+          description: "Moving existing databases from WordPress, Magento, or custom code.",
+          icon: "refresh-cw"
+        },
+        {
+          title: "Headless Storefronts",
+          description: "Building Next-Gen Shopify apps using React and the Storefront API.",
+          icon: "rocket"
+        },
+        {
+          title: "Product Listing Design",
+          description: "Designing beautiful grids, filter layouts, and product pages.",
           icon: "search"
         }
       ]
@@ -605,116 +633,124 @@ export const servicesData: Record<string, ServiceData> = {
         {
           number: "01",
           title: "Scope",
-          description: "Defining required features and apps."
+          description: "Mapping out product structures, shipping methods, and necessary apps."
         },
         {
           number: "02",
-          title: "Design",
-          description: "Creating a custom Shopify UI."
+          title: "Visual Design",
+          description: "Creating custom layouts for home, collection, and checkout pages."
         },
         {
           number: "03",
-          title: "Build",
-          description: "Developing the theme and liquid code."
+          title: "Coding",
+          description: "Developing custom Liquid code and styling with Tailwind."
         },
         {
           number: "04",
-          title: "Test",
-          description: "Full mobile and checkout testing."
+          title: "Integration",
+          description: "Linking payment processors, shipping apps, and setting up redirects."
         },
         {
           number: "05",
-          title: "Live",
-          description: "Handover and successful store launch."
+          title: "Launch & Handoff",
+          description: "Taking the store live and training your team on editor controls."
         }
       ]
+    },
+    cta: {
+      title: "SCALE YOUR SHOPIFY BUSINESS",
+      subtitle: "Get a custom Shopify store built for speed and high conversions. Let's start coding today."
     }
   },
   "website-maintenance": {
     hero: {
-      badge: "Reliable Website Maintenance",
-      title: "WE KEEP YOUR WEBSITE FAST AND SECURE",
-      subtitle: "Focus on your business while we handle your website's technical health, security updates, and performance optimizations every single day.",
+      badge: "Technical Site Care & Support",
+      title: "WE KEEP YOUR DIGITAL ASSETS SECURE AND RUNNING FAST",
+      subtitle: "Delegate server updates, security patches, backups, and small code changes to our engineering team so you can focus on running your business.",
       stats: [
-        { value: "24/7", label: "Monitoring" },
-        { value: "Zero", label: "Downtime Focus" },
-        { value: "Safe", label: "Daily Backups" }
+        { value: "24/7", label: "Site Monitoring" },
+        { value: "Zero", label: "Downtime Vibe" },
+        { value: "Daily", label: "Offsite Backups" }
       ]
     },
     about: {
-      title: "TECHNICAL SUPPORT & CARE",
-      description: "A website is never 'done'. We provide the ongoing care needed to keep your digital asset performing at its best and protected from threats.",
+      title: "CONTINUOUS HEALTH & SECURITY AUDITS",
+      description: "A launch is only the beginning. To stay ahead, your site needs regular system updates, security scans, and database maintenance to prevent bugs, crashes, and search ranking drops.",
       features: [
-        "Security Patches",
-        "Daily Backups",
-        "Speed Checks",
-        "Content Updates"
+        "Continuous Security Scans",
+        "Daily Offsite Backups",
+        "Core Updates & Patches",
+        "Priority Code Support"
       ]
     },
     solutions: {
-      title: "MAINTENANCE SOLUTIONS",
+      title: "HEALTH & CARE SOLUTIONS",
       cards: [
         {
-          title: "Security Audits",
-          description: "Continuous protection from malware and hacks.",
+          title: "Security Protection",
+          description: "Monitoring for malware and defending against server attacks.",
           icon: "shield-check"
         },
         {
-          title: "Core Updates",
-          description: "Keeping WordPress and plugins up to date.",
+          title: "Core Platform Updates",
+          description: "Safely updating modules, plugins, and package versions.",
           icon: "settings"
         },
         {
-          title: "Backup Care",
-          description: "Daily off-site backups for peace of mind.",
+          title: "Database Backups",
+          description: "Scheduling secure, offsite backups to recover data instantly.",
           icon: "refresh-cw"
         },
         {
           title: "Speed Maintenance",
-          description: "Ongoing optimization for fast loading.",
+          description: "Regularly clearing databases to keep load times low.",
           icon: "zap"
         },
         {
-          title: "Content Help",
-          description: "Updating text, images, and blog posts.",
+          title: "Priority Content Edits",
+          description: "Quick turnaround on adding pages, updating text, or pricing.",
           icon: "panels-top-left"
         },
         {
-          title: "Bug Fixes",
-          description: "Rapid response to any technical issues.",
+          title: "Bug Fix Support",
+          description: "Rapid debugging and technical response for any runtime issues.",
           icon: "code-xml"
         }
       ]
     },
     process: {
-      title: "OUR ONGOING SUPPORT CYCLE",
+      title: "OUR ONGOING CARE FLOW",
       steps: [
         {
           number: "01",
-          title: "Audit",
-          description: "Initial check of site health and security."
+          title: "Inspection",
+          description: "Auditing database size, code plugins, and security health."
         },
         {
           number: "02",
-          title: "Secure",
-          description: "Implementing hardening and backups."
+          title: "Setup",
+          description: "Configuring automated daily backups and security firewalls."
         },
         {
           number: "03",
-          title: "Monitor",
-          description: "24/7 technical and uptime tracking."
+          title: "Monitoring",
+          description: "Uptime tracking to catch and fix connection issues immediately."
         },
         {
           number: "04",
-          title: "Update",
-          description: "Regular patches and performance tweaks."
+          title: "Support",
+          description: "Answering your technical requests and executing code changes."
         },
         {
           number: "05",
-          title: "Support",
-          description: "Always available for your requests."
+          title: "Reports",
+          description: "Providing monthly updates on site speed, security logs, and updates."
         }
       ]
+    },
+    cta: {
+      title: "PROTECT YOUR DIGITAL ASSETS",
+      subtitle: "Keep your website secure, fast, and free of bugs. Partner with Codi Tech for professional site care."
     }
   }
 };

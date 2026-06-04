@@ -31,14 +31,14 @@ export function Footer() {
           <div className="col-span-1 md:col-span-3">
             <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Web Development</Link></li>
-              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">UI/UX Design</Link></li>
-              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">SEO Optimization</Link></li>
-              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Branding</Link></li>
-              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">E-Commerce</Link></li>
-              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Digital Marketing</Link></li>
-              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Shopify Development</Link></li>
-              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Website Maintenance</Link></li>
+              <li><Link to="/website-development" className="text-muted-foreground hover:text-foreground transition-colors">Web Development</Link></li>
+              <li><Link to="/ui-ux-design" className="text-muted-foreground hover:text-foreground transition-colors">UI/UX Design</Link></li>
+              <li><Link to="/seo-optimization" className="text-muted-foreground hover:text-foreground transition-colors">SEO Optimization</Link></li>
+              <li><Link to="/branding" className="text-muted-foreground hover:text-foreground transition-colors">Branding</Link></li>
+              <li><Link to="/e-commerce" className="text-muted-foreground hover:text-foreground transition-colors">E-Commerce</Link></li>
+              <li><Link to="/digital-marketing" className="text-muted-foreground hover:text-foreground transition-colors">Digital Marketing</Link></li>
+              <li><Link to="/shopify-development" className="text-muted-foreground hover:text-foreground transition-colors">Shopify Development</Link></li>
+              <li><Link to="/website-maintenance" className="text-muted-foreground hover:text-foreground transition-colors">Website Maintenance</Link></li>
             </ul>
           </div>
 

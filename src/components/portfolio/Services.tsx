@@ -1,54 +1,55 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
+import { Link } from "@tanstack/react-router";
 
 const services = [
   {
     title: "Website Development",
     description: "Custom responsive websites built for speed and scalability.",
     number: "01",
-    href: "#",
+    href: "/website-development",
   },
   {
     title: "UI/UX Design",
     description: "Modern interfaces designed to improve engagement.",
     number: "02",
-    href: "#",
+    href: "/ui-ux-design",
   },
   {
     title: "SEO Optimization",
     description: "Smart SEO strategies that improve rankings and traffic.",
     number: "03",
-    href: "#",
+    href: "/seo-optimization",
   },
   {
     title: "Branding",
     description: "Creative branding solutions for modern businesses.",
     number: "04",
-    href: "#",
+    href: "/branding",
   },
   {
     title: "E-Commerce",
     description: "High-converting online stores built for growth.",
     number: "05",
-    href: "#",
+    href: "/e-commerce",
   },
   {
     title: "Digital Marketing",
     description: "Performance marketing campaigns focused on ROI.",
     number: "06",
-    href: "#",
+    href: "/digital-marketing",
   },
   {
     title: "Shopify Development",
     description: "Professional Shopify stores for modern brands.",
     number: "07",
-    href: "#",
+    href: "/shopify-development",
   },
   {
     title: "Website Maintenance",
     description: "Reliable updates, backups, and technical support.",
     number: "08",
-    href: "#",
+    href: "/website-maintenance",
   },
 ];
 
@@ -107,9 +108,8 @@ export function Services() {
             const { initial, whileInView } = getAnimationProps();
 
             return (
-              <motion.a
+              <motion.div
                 key={service.number}
-                href={service.href}
                 initial={initial}
                 whileInView={whileInView}
                 viewport={{ once: true, margin: "-100px" }}
@@ -117,14 +117,16 @@ export function Services() {
                 whileHover={{ y: -8, backgroundColor: "rgba(255,255,255,0.03)" }}
                 className="group relative overflow-hidden rounded-2xl border border-border bg-black/20 p-6 transition-all"
               >
-                <span className="text-6xl font-display font-bold text-muted-foreground/20 group-hover:text-primary/30 transition-colors">
-                  {service.number}
-                </span>
-                <h3 className="text-xl font-display font-semibold mt-2 group-hover:text-primary transition-colors">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground text-sm mt-2">{service.description}</p>
-              </motion.a>
+                <Link to={service.href} className="block">
+                  <span className="text-6xl font-display font-bold text-muted-foreground/20 group-hover:text-primary/30 transition-colors">
+                    {service.number}
+                  </span>
+                  <h3 className="text-xl font-display font-semibold mt-2 group-hover:text-primary transition-colors">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mt-2">{service.description}</p>
+                </Link>
+              </motion.div>
             );
           })}
         </div>

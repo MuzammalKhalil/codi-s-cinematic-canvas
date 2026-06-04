@@ -46,9 +46,9 @@ export function Footer() {
           <div className="col-span-1 md:col-span-3">
             <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
-              <li><Link to="mailto:info@coditech.com" className="hover:text-foreground transition-colors">info@coditech.com</Link></li>
+              <li><a href="mailto:info@coditech.com" className="hover:text-foreground transition-colors">info@coditech.com</a></li>
             </ul>
-            <Link to="/#contact" className="mt-6 inline-block text-sm border border-border rounded-full px-6 py-3 hover:border-primary transition-all">
+            <Link to="/contact" className="mt-6 inline-block text-sm border border-border rounded-full px-6 py-3 hover:border-primary transition-all">
               Book a call
             </Link>
           </div>

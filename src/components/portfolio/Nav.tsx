@@ -6,7 +6,7 @@ const links = [
   { to: "/#", label: "Process", key: "process" },
   { to: "/#about", label: "About", key: "about" },
   { to: "/packages", label: "Packages", key: "packages" },
-  { to: "/#contact", label: "Contact", key: "contact" },
+  { to: "/contact", label: "Contact", key: "contact" },
 ];
 
 export function Nav() {
@@ -31,7 +31,7 @@ export function Nav() {
             </Link>
           ))}
         </div>
-        <Link to="/#contact" className="btn-magnetic ml-1 text-sm rounded-full bg-primary px-6 py-2 font-medium text-primary-foreground">
+        <Link to="/contact" className="btn-magnetic ml-1 text-sm rounded-full bg-primary px-6 py-2 font-medium text-primary-foreground">
           Book a call
         </Link>
       </nav>

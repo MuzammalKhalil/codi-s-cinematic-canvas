@@ -1,11 +1,12 @@
 import { motion } from "framer-motion";
+import { Link } from "@tanstack/react-router";
 
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
-  { href: "#experience", label: "Experience" },
-  { href: "#contact", label: "Contact" },
+  { to: "/#work", label: "Work", key: "work" },
+  { to: "/#", label: "Process", key: "process" },
+  { to: "/#about", label: "About", key: "about" },
+  { to: "/packages", label: "Packages", key: "packages" },
+  { to: "/#contact", label: "Contact", key: "contact" },
 ];
 
 export function Nav() {
@@ -16,22 +17,23 @@ export function Nav() {
       transition={{ duration: 0.8, delay: 0.3 }}
       className="fixed left-1/2 top-6 z-50 -translate-x-1/2"
     >
-      <nav className="glass flex items-center gap-1 rounded-full px-2 py-2 text-sm">
-        <a href="#top" className="flex items-center gap-2 rounded-full px-4 py-2 font-display font-semibold tracking-tight">
-          <span className="h-2 w-2 rounded-full bg-primary pulse-glow" />
-          CODI<span className="text-muted-foreground">.tech</span>
-        </a>
-        <div className="hidden md:flex">
+      <nav className="glass flex items-center gap-1 rounded-full px-3 py-3">
+        <Link to="/" className="flex items-center gap-2 rounded-full px-4 py-2">
+          <span className="font-display font-bold tracking-tight text-lg">
+            CODI<span className="text-primary">.</span>
+          </span>
+        </Link>
+        <div className="hidden md:flex items-center gap-1">
           {links.map((l) => (
-            <a key={l.href} href={l.href}
-              className="rounded-full px-4 py-2 text-muted-foreground transition hover:bg-white/5 hover:text-foreground">
+            <Link key={l.key} to={l.to}
+              className="rounded-full px-4 py-2 text-sm text-muted-foreground transition hover:bg-white/5 hover:text-foreground">
               {l.label}
-            </a>
+            </Link>
           ))}
         </div>
-        <a href="#contact" className="btn-magnetic ml-1 rounded-full bg-primary px-5 py-2 font-medium text-primary-foreground">
-          Let's talk
-        </a>
+        <Link to="/#contact" className="btn-magnetic ml-1 text-sm rounded-full bg-primary px-6 py-2 font-medium text-primary-foreground">
+          Book a call
+        </Link>
       </nav>
     </motion.header>
   );

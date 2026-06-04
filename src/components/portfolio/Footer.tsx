@@ -1,18 +1,67 @@
+import { Link } from "@tanstack/react-router";
+
 export function Footer() {
   return (
     <footer className="relative border-t border-border bg-black/40">
       <div className="absolute inset-0 grid-bg opacity-30" />
-      <div className="relative mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-6 py-10 md:flex-row">
-        <div className="font-display text-2xl font-semibold">
-          Codi<span className="text-primary glow-text">.</span>Tech
+      <div className="relative mx-auto max-w-7xl px-6 py-16">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+          {/* Brand Column */}
+          <div className="col-span-1 md:col-span-4">
+            <div className="font-display text-3xl font-bold mb-4">
+              CODI<span className="text-primary">.</span>
+            </div>
+            <p className="text-muted-foreground text-sm max-w-xs">
+              A premium digital design studio crafting cinematic web experiences for brands that refuse to look ordinary.
+            </p>
+          </div>
+
+          {/* Studio Links */}
+          <div className="col-span-1 md:col-span-2">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Studio</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/#work" className="text-muted-foreground hover:text-foreground transition-colors">Work</Link></li>
+              <li><Link to="#" className="text-muted-foreground hover:text-foreground transition-colors">Process</Link></li>
+              <li><Link to="/#about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
+            </ul>
+          </div>
+
+          {/* Services Links */}
+          <div className="col-span-1 md:col-span-3">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Services</h4>
+            <ul className="space-y-2 text-sm">
+              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Web Development</Link></li>
+              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">UI/UX Design</Link></li>
+              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">SEO Optimization</Link></li>
+              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Branding</Link></li>
+              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">E-Commerce</Link></li>
+              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Digital Marketing</Link></li>
+              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Shopify Development</Link></li>
+              <li><Link to="/#services" className="text-muted-foreground hover:text-foreground transition-colors">Website Maintenance</Link></li>
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div className="col-span-1 md:col-span-3">
+            <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Contact</h4>
+            <ul className="space-y-2 text-sm text-muted-foreground">
+              <li><Link to="mailto:info@coditech.com" className="hover:text-foreground transition-colors">info@coditech.com</Link></li>
+            </ul>
+            <Link to="/#contact" className="mt-6 inline-block text-sm border border-border rounded-full px-6 py-3 hover:border-primary transition-all">
+              Book a call
+            </Link>
+          </div>
         </div>
-        <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
-          © 2026 — Crafted with obsession in the dark.
-        </div>
-        <div className="flex gap-5 text-sm text-muted-foreground">
-          <a href="https://github.com/MuzammalKhalil" target="_blank" rel="noreferrer" className="hover:text-primary">GH</a>
-          <a href="https://www.linkedin.com/in/muzammal-khalil-189b19317/" target="_blank" rel="noreferrer" className="hover:text-primary">LI</a>
-          <a href="https://www.facebook.com/muzammal.khalil.491578" target="_blank" rel="noreferrer" className="hover:text-primary">FB</a>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            © 2026 Codi Tech. All rights reserved.
+          </p>
+          <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground">
+            Designed & engineered in-house
+          </p>
         </div>
       </div>
     </footer>

@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 
 const socials = [
   { l: "ABOUT STUDIO", v: "Premium Digital Design & Web Development", h: "#" },
-  { l: "CONTACT INFO", v: "info@coditech.com", h: "mailto:info@coditech.com" },
-  { l: "LOCATION", v: "Your City, Your Country", h: "#" },
+  { l: "CONTACT INFO", v: "muzammalkhaliloffical@gmail.com", h: "mailto:muzammalkhaliloffical@gmail.com" },
+  { l: "PHONE", v: "+92 304 162 5523", h: "tel:+923041625523" },
 ];
 
 export function Contact() {

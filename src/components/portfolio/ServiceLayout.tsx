@@ -404,11 +404,11 @@ export function ServiceLayout({ serviceKey }: ServiceLayoutProps) {
                 <Sparkles className="h-4 w-4" />
               </Link>
               <a
-                href="mailto:info@coditech.com"
+                href="mailto:muzammalkhaliloffical@gmail.com"
                 className="w-full sm:w-auto inline-flex items-center justify-center rounded-full border border-border px-8 py-4 text-sm font-medium text-foreground hover:bg-white/5 transition-all"
               >
                 <Mail className="h-4 w-4 mr-2" />
-                info@coditech.com
+                muzammalkhaliloffical@gmail.com
               </a>
             </div>
           </motion.div>

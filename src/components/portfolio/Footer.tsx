@@ -6,9 +6,9 @@ export function Footer() {
       <div className="absolute inset-0 grid-bg opacity-30" />
       <div className="relative mx-auto max-w-7xl px-6 py-16">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {/* Brand Column */}
-          <div className="col-span-1 md:col-span-4">
+          <div className="col-span-1">
             <div className="font-display text-3xl font-bold mb-4">
               CODI<span className="text-primary">.</span>
             </div>
@@ -18,7 +18,7 @@ export function Footer() {
           </div>
 
           {/* Studio Links */}
-          <div className="col-span-1 md:col-span-2">
+          <div className="col-span-1">
             <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Studio</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/#work" className="text-muted-foreground hover:text-foreground transition-colors">Work</Link></li>
@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           {/* Services Links */}
-          <div className="col-span-1 md:col-span-3">
+          <div className="col-span-1">
             <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Services</h4>
             <ul className="space-y-2 text-sm">
               <li><Link to="/website-development" className="text-muted-foreground hover:text-foreground transition-colors">Web Development</Link></li>
@@ -43,7 +43,7 @@ export function Footer() {
           </div>
 
           {/* Contact Info */}
-          <div className="col-span-1 md:col-span-3">
+          <div className="col-span-1">
             <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Contact</h4>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li><a href="mailto:info@coditech.com" className="hover:text-foreground transition-colors">info@coditech.com</a></li>

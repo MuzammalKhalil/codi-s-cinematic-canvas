@@ -38,11 +38,11 @@ export function Nav() {
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden md:block">
-          <Link to="/contact" className="btn-magnetic text-sm rounded-full bg-primary px-6 py-2 font-medium text-primary-foreground">
-            Book a call
-          </Link>
-        </div>
+            <div className="hidden md:block">
+              <a href="tel:+923041625523" className="btn-magnetic ml-1 text-sm rounded-full bg-primary px-6 py-2 font-medium text-primary-foreground">
+                Book a call
+              </a>
+            </div>
 
         {/* Mobile Menu Button */}
         <button 
@@ -75,13 +75,13 @@ export function Nav() {
                   {l.label}
                 </Link>
               ))}
-              <Link 
-                to="/contact" 
+              <a
+                href="tel:+923041625523"
                 onClick={() => setIsMenuOpen(false)}
                 className="mt-2 w-full text-center py-3 rounded-full bg-primary text-primary-foreground font-medium"
               >
                 Book a call
-              </Link>
+              </a>
             </div>
           </motion.div>
         )}

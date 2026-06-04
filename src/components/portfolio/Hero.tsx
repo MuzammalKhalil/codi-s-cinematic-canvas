@@ -61,9 +61,9 @@ export function Hero() {
             View Work
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
-          <a href="#contact" className="glass btn-magnetic rounded-full px-7 py-4 font-medium">
-            Contact Me
-          </a>
+          <a href="tel:+923041625523" className="glass btn-magnetic rounded-full px-7 py-4 font-medium">
+              Contact Me
+            </a>
         </motion.div>
 
         <motion.div

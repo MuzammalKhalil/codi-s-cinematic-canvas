@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 const services = [
   {
@@ -52,6 +53,12 @@ const services = [
 ];
 
 export function Services() {
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <section id="services" className="relative z-10 py-20 px-6">
       <div className="mx-auto max-w-7xl">
@@ -78,21 +85,17 @@ export function Services() {
           {services.map((service, i) => {
             // For lg: 4 columns, md: 2 columns
             const getAnimationProps = () => {
-              const width = typeof window !== "undefined" ? window.innerWidth : 1024;
-              let initial;
+              const width = isClient ? window.innerWidth : 1024;
+              let initial = { opacity: 0, y: 20 };
               
               if (width >= 1024) {
                 const col = i % 4;
                 if (col === 0) initial = { opacity: 0, x: -50 };
                 else if (col === 3) initial = { opacity: 0, x: 50 };
-                else initial = { opacity: 0, y: 20 };
               } else if (width >= 768) {
                 const col = i % 2;
                 if (col === 0) initial = { opacity: 0, x: -50 };
                 else if (col === 1) initial = { opacity: 0, x: 50 };
-                else initial = { opacity: 0, y: 20 };
-              } else {
-                initial = { opacity: 0, y: 20 };
               }
               
               return {
@@ -101,7 +104,7 @@ export function Services() {
               };
             };
             
-            const { initial, whileInView } = typeof window !== "undefined" ? getAnimationProps() : { initial: { opacity: 0, y: 20 }, whileInView: { opacity: 1, x: 0, y: 0 } };
+            const { initial, whileInView } = getAnimationProps();
 
             return (
               <motion.a

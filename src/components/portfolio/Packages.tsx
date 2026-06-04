@@ -372,7 +372,7 @@ export function Packages() {
 
   return (
     <section className="relative z-10 py-16 px-6">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1440px]">
         {/* Page Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -15,7 +15,7 @@ export function Contact() {
           background: "radial-gradient(circle, oklch(0.55 0.18 195 / 0.3), transparent 70%)",
           filter: "blur(60px)",
         }} />
-      <div className="relative mx-auto max-w-5xl px-6 text-center">
+      <div className="relative mx-auto max-w-[1440px] px-6 text-center">
         <motion.h2
           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
           transition={{ duration: 0.8 }}

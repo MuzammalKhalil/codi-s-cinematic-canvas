@@ -10,7 +10,7 @@ const stats = [
 export function About() {
   return (
     <section id="about" className="relative py-32">
-      <div className="mx-auto grid max-w-7xl gap-16 px-6 lg:grid-cols-2">
+      <div className="mx-auto grid max-w-[1440px] gap-16 px-6 lg:grid-cols-2">
         <div>
           <motion.span
             initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}

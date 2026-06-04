@@ -11,7 +11,7 @@ export function Hero() {
       <div aria-hidden className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-primary to-transparent opacity-60"
         style={{ animation: "scan 8s linear infinite" }} />
 
-      <div className="relative z-10 mx-auto flex max-w-7xl flex-col items-center px-6 pt-12 text-center">
+      <div className="relative z-10 mx-auto flex max-w-[1440px] flex-col items-center px-6 pt-12 text-center">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

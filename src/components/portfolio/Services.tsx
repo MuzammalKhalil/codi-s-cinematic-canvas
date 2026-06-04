@@ -62,7 +62,7 @@ export function Services() {
 
   return (
     <section id="services" className="relative z-10 py-20 px-6">
-      <div className="mx-auto max-w-7xl">
+      <div className="mx-auto max-w-[1440px]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

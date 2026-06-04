@@ -18,7 +18,7 @@ export function Nav() {
       initial={{ y: -40, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.8, delay: 0.3 }}
-      className="fixed left-1/2 top-6 z-50 -translate-x-1/2 w-full max-w-6xl px-6"
+      className="fixed left-1/2 top-6 z-50 -translate-x-1/2 w-full max-w-[1440px] px-6"
     >
       <nav className="glass flex items-center justify-between gap-4 rounded-full px-10 py-4">
         <Link to="/" className="flex items-center gap-2 rounded-full px-4 py-2">

@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="relative border-t border-border bg-black/40">
       <div className="absolute inset-0 grid-bg opacity-30" />
-      <div className="relative mx-auto max-w-7xl px-6 py-16">
+      <div className="relative mx-auto max-w-[1440px] px-6 py-16">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {/* Brand Column */}

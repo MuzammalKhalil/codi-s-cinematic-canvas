@@ -13,7 +13,7 @@ export function Skills() {
   return (
     <section id="skills" className="relative py-32">
       <div className="absolute inset-0 grid-bg opacity-50" />
-      <div className="relative mx-auto max-w-7xl px-6">
+      <div className="relative mx-auto max-w-[1440px] px-6">
         <div className="mb-16 flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary">◇ Capabilities</span>

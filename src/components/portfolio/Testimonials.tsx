@@ -9,7 +9,7 @@ const quotes = [
 export function Testimonials() {
   return (
     <section className="relative py-32">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1440px] px-6">
         <div className="mb-16 flex items-end justify-between">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary">◇ Kind Words</span>

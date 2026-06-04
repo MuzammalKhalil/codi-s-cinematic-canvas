@@ -104,7 +104,7 @@ export function ServiceLayout({ serviceKey }: ServiceLayoutProps) {
           <div className="absolute inset-0 grid-bg opacity-30" />
         </div>
 
-        <div className="mx-auto max-w-7xl w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        <div className="mx-auto max-w-[1440px] w-full grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
           {/* Left Column: Text Content */}
           <div className="lg:col-span-7 text-center lg:text-left">
             <motion.div
@@ -213,7 +213,7 @@ export function ServiceLayout({ serviceKey }: ServiceLayoutProps) {
 
       {/* 2. ABOUT SERVICE SECTION */}
       <section className="relative z-10 py-24 sm:py-32 border-t border-border/50 bg-black/10">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-[1440px] px-6">
           <div className="mb-16">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -270,7 +270,7 @@ export function ServiceLayout({ serviceKey }: ServiceLayoutProps) {
 
       {/* 3. DETAILED SOLUTIONS SECTION */}
       <section className="relative z-10 py-24 sm:py-32 border-t border-border/50">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-[1440px] px-6">
           <div className="mb-16">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -323,7 +323,7 @@ export function ServiceLayout({ serviceKey }: ServiceLayoutProps) {
 
       {/* 4. WORK PROCESS SECTION */}
       <section className="relative z-10 py-24 sm:py-32 border-t border-border/50 bg-black/10">
-        <div className="mx-auto max-w-7xl px-6">
+        <div className="mx-auto max-w-[1440px] px-6">
           <div className="mb-20 text-center">
             <motion.div
               initial={{ opacity: 0, y: 15 }}
@@ -372,7 +372,7 @@ export function ServiceLayout({ serviceKey }: ServiceLayoutProps) {
 
       {/* 5. CTA LET'S BUILD SECTION */}
       <section className="relative z-10 py-24 sm:py-32 px-6">
-        <div className="mx-auto max-w-6xl">
+        <div className="mx-auto max-w-[1440px]">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

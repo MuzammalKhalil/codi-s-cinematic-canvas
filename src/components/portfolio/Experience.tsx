@@ -14,7 +14,7 @@ const items = [
 export function Experience() {
   return (
     <section id="experience" className="relative py-32">
-      <div className="mx-auto max-w-5xl px-6">
+      <div className="mx-auto max-w-[1440px] px-6">
         <div className="mb-16 text-center">
           <span className="text-xs uppercase tracking-[0.3em] text-primary">◇ Journey</span>
           <h2 className="mt-4 font-display text-5xl font-semibold leading-[1.05] md:text-7xl">

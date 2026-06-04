@@ -14,7 +14,7 @@ const projects = [
 export function Work() {
   return (
     <section id="work" className="relative py-32">
-      <div className="mx-auto max-w-7xl px-6">
+      <div className="mx-auto max-w-[1440px] px-6">
         <div className="mb-20 flex items-end justify-between">
           <div>
             <span className="text-xs uppercase tracking-[0.3em] text-primary">◇ Selected Work</span>

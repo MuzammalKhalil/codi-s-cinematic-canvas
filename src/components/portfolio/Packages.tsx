@@ -324,18 +324,51 @@ function PackageCard({ name, price, description, features }: { name: string; pri
 export function Packages() {
   const [activeTab, setActiveTab] = useState("all");
 
-  // Get active packages: if "all", combine all packages from all technologies
-  const getActivePackages = () => {
+  // Get active packages: if "all", group by technology, else get single category
+  const getRenderContent = () => {
     if (activeTab === "all") {
-      // Get all packages from all categories except "all"
+      // Render each category with title and packages
       return Object.entries(packagesData)
         .filter(([key]) => key !== "all")
-        .flatMap(([, packages]) => packages);
+        .map(([techKey, packages]) => {
+          const techLabel = technologies.find((t) => t.id === techKey)?.label;
+          return (
+            <div key={techKey} className="mb-16">
+              <h2 className="text-2xl md:text-3xl font-display font-semibold mb-8">
+                {techLabel}
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                {packages.map((pkg, i) => (
+                  <PackageCard
+                    key={i}
+                    name={pkg.name}
+                    price={pkg.price}
+                    description={pkg.description}
+                    features={pkg.features}
+                  />
+                ))}
+              </div>
+            </div>
+          );
+        });
+    } else {
+      // Render single category packages
+      const packages = packagesData[activeTab as keyof typeof packagesData];
+      return (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {packages.map((pkg, i) => (
+            <PackageCard
+              key={i}
+              name={pkg.name}
+              price={pkg.price}
+              description={pkg.description}
+              features={pkg.features}
+            />
+          ))}
+        </div>
+      );
     }
-    return packagesData[activeTab as keyof typeof packagesData];
   };
-
-  const activePackages = getActivePackages();
 
   return (
     <section className="relative z-10 py-16 px-6">
@@ -373,7 +406,7 @@ export function Packages() {
           </div>
         </div>
 
-        {/* Packages Grid */}
+        {/* Packages Content */}
         <AnimatePresence mode="wait">
           <motion.div
             key={activeTab}
@@ -381,17 +414,8 @@ export function Packages() {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 20 }}
             transition={{ duration: 0.3 }}
-            className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8"
           >
-            {activePackages.map((pkg, i) => (
-              <PackageCard
-                key={i}
-                name={pkg.name}
-                price={pkg.price}
-                description={pkg.description}
-                features={pkg.features}
-              />
-            ))}
+            {getRenderContent()}
           </motion.div>
         </AnimatePresence>
       </div>

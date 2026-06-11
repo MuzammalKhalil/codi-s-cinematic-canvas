@@ -157,7 +157,8 @@ export function ServiceLayout({ serviceKey }: ServiceLayoutProps) {
                 <Sparkles className="h-4 w-4" />
               </Link>
               <Link
-                to="/#work"
+                to="/"
+                hash="work"
                 className="glass w-full sm:w-auto inline-flex items-center justify-center rounded-full px-8 py-4 text-sm font-medium text-foreground hover:bg-white/5 transition-all"
               >
                 VIEW PORTFOLIO

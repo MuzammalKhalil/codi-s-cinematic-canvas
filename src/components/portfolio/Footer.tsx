@@ -10,7 +10,7 @@ export function Footer() {
           {/* Brand Column */}
           <div className="col-span-1">
             <div className="font-display text-3xl font-bold mb-4">
-              CODI<span className="text-primary">.</span>
+              CODI<span className="text-primary">TECH</span>
             </div>
             <p className="text-muted-foreground text-sm max-w-xs">
               A premium digital design studio crafting cinematic web experiences for brands that refuse to look ordinary.

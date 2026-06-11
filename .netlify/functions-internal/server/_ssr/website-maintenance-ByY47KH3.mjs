@@ -1,5 +1,5 @@
 import { j as jsxRuntimeExports } from "../_libs/react.mjs";
-import { S as ServiceLayout } from "./ServiceLayout-B0FJ5Z_5.mjs";
+import { S as ServiceLayout } from "./ServiceLayout-loTjMW8G.mjs";
 import "../_libs/tanstack__react-router.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";
@@ -19,9 +19,9 @@ import "../_libs/framer-motion.mjs";
 import "../_libs/motion-dom.mjs";
 import "../_libs/motion-utils.mjs";
 import "../_libs/lucide-react.mjs";
-function ShopifyDevelopmentPage() {
-  return /* @__PURE__ */ jsxRuntimeExports.jsx(ServiceLayout, { serviceKey: "shopify-development" });
+function WebsiteMaintenancePage() {
+  return /* @__PURE__ */ jsxRuntimeExports.jsx(ServiceLayout, { serviceKey: "website-maintenance" });
 }
 export {
-  ShopifyDevelopmentPage as component
+  WebsiteMaintenancePage as component
 };

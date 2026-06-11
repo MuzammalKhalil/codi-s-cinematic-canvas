@@ -1,7 +1,7 @@
 import { j as jsxRuntimeExports, r as reactExports } from "../_libs/react.mjs";
 import { C as CursorGlow, N as Nav, F as Footer } from "./CursorGlow-BrOlEftU.mjs";
 import { L as Link } from "../_libs/tanstack__react-router.mjs";
-import { C as Contact } from "./Contact-DG2lGXqs.mjs";
+import { C as Contact } from "./Contact-B5nVMnIE.mjs";
 import { m as motion } from "../_libs/framer-motion.mjs";
 import "../_libs/tanstack__router-core.mjs";
 import "../_libs/tanstack__history.mjs";

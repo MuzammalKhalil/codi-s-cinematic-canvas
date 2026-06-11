@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Building2, Mail, Phone } from "lucide-react";
+import { useState } from "react";
 
 const socials = [
   { l: "ABOUT STUDIO", v: "Premium Digital Design & Web Development", h: "#", i: Building2 },
@@ -8,6 +9,52 @@ const socials = [
 ];
 
 export function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [statusMessage, setStatusMessage] = useState("");
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus("error");
+      setStatusMessage("Email service is not configured yet.");
+      return;
+    }
+
+    const form = event.currentTarget;
+    const formData = new FormData(form);
+
+    setStatus("sending");
+    setStatusMessage("");
+
+    try {
+      const emailjs = await import("@emailjs/browser");
+
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          first_name: formData.get("first_name"),
+          last_name: formData.get("last_name"),
+          user_email: formData.get("user_email"),
+          message: formData.get("message"),
+        },
+        { publicKey },
+      );
+
+      form.reset();
+      setStatus("success");
+      setStatusMessage("Message sent. We will get back to you soon.");
+    } catch (error) {
+      setStatus("error");
+      setStatusMessage(error instanceof Error ? error.message : "Message could not be sent.");
+    }
+  }
+
   return (
     <section id="contact" className="relative overflow-hidden py-32">
       <div className="absolute inset-0 grid-bg opacity-60" />
@@ -28,29 +75,34 @@ export function Contact() {
           Any questions or remarks? Just write us a message!
         </p>
 
-        <form onSubmit={(e) => e.preventDefault()} className="mx-auto mt-12 grid max-w-2xl gap-4 text-left">
+        <form onSubmit={handleSubmit} className="mx-auto mt-12 grid max-w-2xl gap-4 text-left">
           <div className="grid gap-4 md:grid-cols-2">
             <div>
               <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">First Name</label>
-              <input placeholder="John" className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
+              <input name="first_name" placeholder="John" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
             </div>
             <div>
               <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Last Name</label>
-              <input placeholder="Doe" className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
+              <input name="last_name" placeholder="Doe" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
             </div>
           </div>
           <div>
             <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Email</label>
-            <input placeholder="Enter a valid email address" type="email" className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
+            <input name="user_email" placeholder="Enter a valid email address" type="email" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
           </div>
           <div>
             <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Message</label>
-            <textarea placeholder="How can we help you?" rows={5}
+            <textarea name="message" placeholder="How can we help you?" rows={5} required
               className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
           </div>
-          <button type="submit" className="mt-4 w-full rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 py-4 font-semibold text-background">
-            SUBMIT MESSAGE
+          <button type="submit" disabled={status === "sending"} className="mt-4 w-full rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 py-4 font-semibold text-background transition disabled:cursor-not-allowed disabled:opacity-60">
+            {status === "sending" ? "SENDING..." : "SUBMIT MESSAGE"}
           </button>
+          {statusMessage ? (
+            <p className={`text-center text-sm ${status === "error" ? "text-red-400" : "text-primary"}`}>
+              {statusMessage}
+            </p>
+          ) : null}
         </form>
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">

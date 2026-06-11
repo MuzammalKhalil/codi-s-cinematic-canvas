@@ -15,7 +15,7 @@ import "crypto";
 import "async_hooks";
 import "stream";
 import "../_libs/isbot.mjs";
-const appCss = "/assets/styles-A-bgDSf-.css";
+const appCss = "/assets/styles-CKepDz-0.css";
 function reportLovableError(error, context = {}) {
   if (typeof window === "undefined") return;
   window.__lovableEvents?.captureException?.(
@@ -122,7 +122,7 @@ function RootComponent() {
   const { queryClient } = Route$b.useRouteContext();
   return /* @__PURE__ */ jsxRuntimeExports.jsx(QueryClientProvider, { client: queryClient, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Outlet, {}) });
 }
-const $$splitComponentImporter$a = () => import("./website-maintenance-DMo0lA-Q.mjs");
+const $$splitComponentImporter$a = () => import("./website-maintenance-ByY47KH3.mjs");
 const Route$a = createFileRoute("/website-maintenance")({
   head: () => ({
     meta: [{
@@ -134,7 +134,7 @@ const Route$a = createFileRoute("/website-maintenance")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$a, "component")
 });
-const $$splitComponentImporter$9 = () => import("./website-development-CzjsBrtN.mjs");
+const $$splitComponentImporter$9 = () => import("./website-development-o5Kl0qhb.mjs");
 const Route$9 = createFileRoute("/website-development")({
   head: () => ({
     meta: [{
@@ -146,7 +146,7 @@ const Route$9 = createFileRoute("/website-development")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$9, "component")
 });
-const $$splitComponentImporter$8 = () => import("./ui-ux-design-DGkHc_gk.mjs");
+const $$splitComponentImporter$8 = () => import("./ui-ux-design-tHEcort-.mjs");
 const Route$8 = createFileRoute("/ui-ux-design")({
   head: () => ({
     meta: [{
@@ -158,7 +158,7 @@ const Route$8 = createFileRoute("/ui-ux-design")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$8, "component")
 });
-const $$splitComponentImporter$7 = () => import("./shopify-development-Dt_phEWC.mjs");
+const $$splitComponentImporter$7 = () => import("./shopify-development-NmqQ_EfL.mjs");
 const Route$7 = createFileRoute("/shopify-development")({
   head: () => ({
     meta: [{
@@ -170,7 +170,7 @@ const Route$7 = createFileRoute("/shopify-development")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$7, "component")
 });
-const $$splitComponentImporter$6 = () => import("./seo-optimization-C2XKzmi7.mjs");
+const $$splitComponentImporter$6 = () => import("./seo-optimization-v-JDZ8yJ.mjs");
 const Route$6 = createFileRoute("/seo-optimization")({
   head: () => ({
     meta: [{
@@ -194,7 +194,7 @@ const Route$5 = createFileRoute("/packages")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$5, "component")
 });
-const $$splitComponentImporter$4 = () => import("./e-commerce-DRZaWmOt.mjs");
+const $$splitComponentImporter$4 = () => import("./e-commerce-InnENUrI.mjs");
 const Route$4 = createFileRoute("/e-commerce")({
   head: () => ({
     meta: [{
@@ -206,7 +206,7 @@ const Route$4 = createFileRoute("/e-commerce")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$4, "component")
 });
-const $$splitComponentImporter$3 = () => import("./digital-marketing-BP_A2-Gm.mjs");
+const $$splitComponentImporter$3 = () => import("./digital-marketing-CRDcNTyA.mjs");
 const Route$3 = createFileRoute("/digital-marketing")({
   head: () => ({
     meta: [{
@@ -218,7 +218,7 @@ const Route$3 = createFileRoute("/digital-marketing")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$3, "component")
 });
-const $$splitComponentImporter$2 = () => import("./contact-BE8OGFfm.mjs");
+const $$splitComponentImporter$2 = () => import("./contact-CYzyHlew.mjs");
 const Route$2 = createFileRoute("/contact")({
   head: () => ({
     meta: [{
@@ -230,7 +230,7 @@ const Route$2 = createFileRoute("/contact")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$2, "component")
 });
-const $$splitComponentImporter$1 = () => import("./branding-DP-JvIDO.mjs");
+const $$splitComponentImporter$1 = () => import("./branding-BivGa8xR.mjs");
 const Route$1 = createFileRoute("/branding")({
   head: () => ({
     meta: [{
@@ -242,7 +242,7 @@ const Route$1 = createFileRoute("/branding")({
   }),
   component: lazyRouteComponent($$splitComponentImporter$1, "component")
 });
-const $$splitComponentImporter = () => import("./index-JQF2MD_h.mjs");
+const $$splitComponentImporter = () => import("./index-jn2meGYM.mjs");
 const Route = createFileRoute("/")({
   head: () => ({
     meta: [{

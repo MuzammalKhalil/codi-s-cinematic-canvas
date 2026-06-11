@@ -8,6 +8,19 @@ const socials = [
   { l: "PHONE", v: "+92 304 162 5523", h: "tel:+923041625523", i: Phone },
 ];
 
+function getEmailErrorMessage(error: unknown) {
+  if (error && typeof error === "object") {
+    const emailError = error as { status?: number; text?: string; message?: string };
+    const detail = emailError.text || emailError.message;
+
+    if (detail) {
+      return emailError.status ? `EmailJS ${emailError.status}: ${detail}` : detail;
+    }
+  }
+
+  return "Message could not be sent.";
+}
+
 export function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
@@ -27,6 +40,11 @@ export function Contact() {
 
     const form = event.currentTarget;
     const formData = new FormData(form);
+    const firstName = String(formData.get("first_name") || "");
+    const lastName = String(formData.get("last_name") || "");
+    const userEmail = String(formData.get("user_email") || "");
+    const message = String(formData.get("message") || "");
+    const fullName = [firstName, lastName].filter(Boolean).join(" ");
 
     setStatus("sending");
     setStatusMessage("");
@@ -38,10 +56,15 @@ export function Contact() {
         serviceId,
         templateId,
         {
-          first_name: formData.get("first_name"),
-          last_name: formData.get("last_name"),
-          user_email: formData.get("user_email"),
-          message: formData.get("message"),
+          first_name: firstName,
+          last_name: lastName,
+          user_email: userEmail,
+          message,
+          name: fullName,
+          user_name: fullName,
+          from_name: fullName,
+          email: userEmail,
+          reply_to: userEmail,
         },
         { publicKey },
       );
@@ -51,7 +74,7 @@ export function Contact() {
       setStatusMessage("Message sent. We will get back to you soon.");
     } catch (error) {
       setStatus("error");
-      setStatusMessage(error instanceof Error ? error.message : "Message could not be sent.");
+      setStatusMessage(getEmailErrorMessage(error));
     }
   }
 

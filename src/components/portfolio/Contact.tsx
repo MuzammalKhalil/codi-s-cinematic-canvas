@@ -1,9 +1,10 @@
 import { motion } from "framer-motion";
+import { Building2, Mail, Phone } from "lucide-react";
 
 const socials = [
-  { l: "ABOUT STUDIO", v: "Premium Digital Design & Web Development", h: "#" },
-  { l: "CONTACT INFO", v: "muzammalkhaliloffical@gmail.com", h: "mailto:muzammalkhaliloffical@gmail.com" },
-  { l: "PHONE", v: "+92 304 162 5523", h: "tel:+923041625523" },
+  { l: "ABOUT STUDIO", v: "Premium Digital Design & Web Development", h: "#", i: Building2 },
+  { l: "CONTACT INFO", v: "muzammalkhaliloffical@gmail.com", h: "mailto:muzammalkhaliloffical@gmail.com", i: Mail },
+  { l: "PHONE", v: "+92 304 162 5523", h: "tel:+923041625523", i: Phone },
 ];
 
 export function Contact() {
@@ -53,16 +54,19 @@ export function Contact() {
         </form>
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
-          {socials.map((s) => (
-            <a key={s.l} href={s.h} target="_blank" rel="noreferrer"
-              className="group flex flex-col items-center gap-4 p-5 transition">
-              <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center group-hover:border-primary transition">
-                <span className="text-2xl">✉️</span>
-              </div>
-              <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold">{s.l}</span>
-              <span className="text-sm text-muted-foreground max-w-xs text-center transition group-hover:text-primary">{s.v}</span>
-            </a>
-          ))}
+          {socials.map((s) => {
+            const IconComponent = s.i;
+            return (
+              <a key={s.l} href={s.h} target="_blank" rel="noreferrer"
+                className="group flex flex-col items-center gap-4 p-5 transition">
+                <div className="w-16 h-16 rounded-full border border-border flex items-center justify-center group-hover:border-primary transition">
+                  <IconComponent className="w-8 h-8 text-primary" />
+                </div>
+                <span className="text-xs uppercase tracking-[0.2em] text-muted-foreground font-semibold">{s.l}</span>
+                <span className="text-sm text-muted-foreground max-w-xs text-center transition group-hover:text-primary">{s.v}</span>
+              </a>
+            );
+          })}
         </div>
       </div>
     </section>

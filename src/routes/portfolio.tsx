@@ -3,12 +3,12 @@ import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import { CursorGlow } from "@/components/portfolio/CursorGlow";
 import { motion } from "framer-motion";
+import { useState } from "react";
 
 const portfolioProjects = [
   {
     id: "1",
-    year: "2025",
-    category: "Web Development",
+    category: "React",
     title: "Lumen OS Dashboard",
     description: "A cinematic SaaS dashboard with WebGL particle effects and real-time analytics integration.",
     tags: ["React", "Three.js", "Framer Motion"],
@@ -16,7 +16,6 @@ const portfolioProjects = [
   },
   {
     id: "2",
-    year: "2025",
     category: "E-commerce",
     title: "Atelier Noir Luxury Store",
     description: "Premium fashion e-commerce site with editorial scroll storytelling and immersive product showcases.",
@@ -25,8 +24,7 @@ const portfolioProjects = [
   },
   {
     id: "3",
-    year: "2024",
-    category: "Brand Identity",
+    category: "WebGL",
     title: "Halo Studio Website",
     description: "Award-winning creative agency site with shader transitions and award-winning UI design.",
     tags: ["Three.js", "Lenis", "WebGL"],
@@ -34,32 +32,40 @@ const portfolioProjects = [
   },
   {
     id: "4",
-    year: "2024",
-    category: "Mobile App",
+    category: "Mobile",
     title: "Pulse Wallet",
     description: "Kinetic mobile wallet UI with dynamic data visualizations and smooth micro-interactions.",
     tags: ["React Native", "Reanimated", "Fintech"],
     gradient: "linear-gradient(135deg, #1a1a1a, #003a3a)",
   },
+  // WordPress Projects
   {
-    id: "5",
-    year: "2023",
-    category: "SaaS",
-    title: "Vertex Analytics",
-    description: "Data visualization platform with interactive charts and real-time data streaming.",
-    tags: ["Vue.js", "D3.js", "Firebase"],
-    gradient: "linear-gradient(135deg, #1a2a3a, #2a4a5a)",
+    id: "7",
+    category: "WordPress",
+    title: "Get Quick Skills",
+    description: "Online learning platform built with WordPress, featuring course management and user dashboards.",
+    tags: ["Construction", "WordPress", "Business"],
+    image: "/screencapture-getquickskills-2.jpeg",
   },
   {
-    id: "6",
-    year: "2023",
-    category: "Marketing",
-    title: "Nexus Campaign Hub",
-    description: "Multi-channel marketing campaign manager with beautiful analytics and reporting.",
-    tags: ["React", "Tailwind", "Node.js"],
-    gradient: "linear-gradient(135deg, #2a1a3a, #4a2a5a)",
+    id: "8",
+    category: "WordPress",
+    title: "Million Deeds",
+    description: "Charity and crowdfunding platform developed with WordPress for social impact initiatives.",
+    tags: ["Education", "WordPress", "Language"],
+    image: "/screencapture-milliondeeds-202.png",
+  },
+  {
+    id: "9",
+    category: "WordPress",
+    title: "Taxi Crandendon",
+    description: "Taxi booking and transportation service website created with WordPress.",
+    tags: ["Pets", "WordPress", "Animals"],
+    image: "/screencapture-taxi-crandendonc.png",
   },
 ];
+
+const categories = ["All", "React", "E-commerce", "WordPress", "WebGL", "Mobile"];
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -72,87 +78,94 @@ export const Route = createFileRoute("/portfolio")({
 });
 
 function PortfolioPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredProjects = portfolioProjects.filter(project =>
+    activeCategory === "All" ? true : project.category === activeCategory
+  );
+
   return (
     <main className="relative noise min-h-screen">
       <CursorGlow />
       <Nav />
-
-      {/* Hero */}
-      <section className="relative pt-40 pb-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 grid-bg opacity-30" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl float-y" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl float-x" />
-
-        <div className="relative mx-auto max-w-[1440px] z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
+      <div className="pt-32 pb-20">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12"
           >
-            <span className="inline-flex items-center gap-2 glass px-4 py-2 rounded-full text-xs uppercase tracking-[0.3em] text-primary mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="absolute inset-0 animate-ping rounded-full bg-primary opacity-75" />
-                <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-              </span>
-              Our Work
-            </span>
-            <h1 className="font-display text-5xl md:text-7xl font-semibold leading-[1.05] mb-6">
-              Curated <span className="chrome-text">digital projects</span>
-            </h1>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-              A showcase of our best work, where design meets technology to create unforgettable digital experiences.
-            </p>
+            <h1 className="text-4xl md:text-5xl font-display font-semibold mb-2">Our Complete Portfolio</h1>
+            <p className="text-muted-foreground">Organized by technology platform and industry</p>
           </motion.div>
-        </div>
-      </section>
 
-      {/* Portfolio Grid */}
-      <section className="py-20 px-6">
-        <div className="mx-auto max-w-[1440px]">
+          {/* Filter Buttons */}
+          <div className="flex justify-center gap-3 mb-12 flex-wrap">
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
+                  activeCategory === category
+                    ? "bg-primary text-primary-foreground shadow-glow"
+                    : "glass border border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioProjects.map((project, i) => (
+            {filteredProjects.map((project, i) => (
               <motion.div
                 key={project.id}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.7, delay: i * 0.1 }}
-                whileHover={{ y: -12 }}
-                className="group glass rounded-3xl overflow-hidden border border-border hover:border-primary/30 transition-all"
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                className="group relative overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur transition-all hover:border-primary/30 hover:shadow-glow"
                 style={{ boxShadow: "0 0 40px oklch(0.55 0.18 195 / 0.1)" }}
               >
-                <div className="relative h-56 overflow-hidden">
-                  <div
-                    className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                    style={{ background: project.gradient }}
-                  />
-                  <div className="absolute inset-0 grid-bg opacity-50" />
+                {/* Image Area */}
+                <div className="relative h-64 overflow-hidden">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="absolute w-full h-auto object-cover transition-all duration-[5000ms] ease-in-out group-hover:translate-y-[-calc(100%-256px)]"
+                      style={{ minHeight: "100%", top: 0 }}
+                    />
+                  ) : (
+                    <div
+                      className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                      style={{ background: project.gradient }}
+                    />
+                  )}
+                  <div className="absolute inset-0 grid-bg opacity-40" />
                   <div
                     className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
                     style={{
-                      background:
-                        "radial-gradient(circle at 50% 50%, oklch(0.7 0.18 195 / 0.5), transparent 70%)",
+                      background: "radial-gradient(circle at 50% 50%, oklch(0.7 0.18 195 / 0.3), transparent 70%)",
                     }}
                   />
-                  <div className="absolute top-6 left-6 flex gap-3">
-                    <span className="glass px-3 py-1 rounded-full text-xs text-primary font-semibold">
-                      {project.year}
-                    </span>
-                    <span className="glass px-3 py-1 rounded-full text-xs text-muted-foreground">
-                      {project.category}
-                    </span>
+                  {/* Tags at top */}
+                  <div className="absolute top-4 left-4 flex gap-2">
+                    <span className="glass px-3 py-1 rounded-full text-xs text-primary">{(2024 - (i % 2)).toString()}</span>
+                    <span className="glass px-3 py-1 rounded-full text-xs text-muted-foreground">{project.category}</span>
                   </div>
                 </div>
-                <div className="p-8">
-                  <h3 className="text-2xl font-display font-semibold mb-3">{project.title}</h3>
-                  <p className="text-muted-foreground mb-6">{project.description}</p>
+
+                {/* Content Area */}
+                <div className="p-6">
+                  <h3 className="text-xl font-display font-semibold mb-2">{project.title}</h3>
+                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="px-3 py-1 rounded-full bg-primary/10 text-primary text-sm"
-                      >
+                      <span key={idx} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
                         {tag}
                       </span>
                     ))}
@@ -162,8 +175,7 @@ function PortfolioPage() {
             ))}
           </div>
         </div>
-      </section>
-
+      </div>
       <Footer />
     </main>
   );

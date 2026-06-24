@@ -37,7 +37,7 @@ function Index() {
       <Work />
       <Experience />
       <Testimonials />
-      <Contact />
+      <Contact hideForm />
       <Footer />
     </main>
   );

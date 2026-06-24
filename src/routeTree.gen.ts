@@ -13,12 +13,15 @@ import { Route as WebsiteMaintenanceRouteImport } from './routes/website-mainten
 import { Route as WebsiteDevelopmentRouteImport } from './routes/website-development'
 import { Route as UiUxDesignRouteImport } from './routes/ui-ux-design'
 import { Route as ShopifyDevelopmentRouteImport } from './routes/shopify-development'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as SeoOptimizationRouteImport } from './routes/seo-optimization'
+import { Route as PortfolioRouteImport } from './routes/portfolio'
 import { Route as PackagesRouteImport } from './routes/packages'
 import { Route as ECommerceRouteImport } from './routes/e-commerce'
 import { Route as DigitalMarketingRouteImport } from './routes/digital-marketing'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as BrandingRouteImport } from './routes/branding'
+import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
 const WebsiteMaintenanceRoute = WebsiteMaintenanceRouteImport.update({
@@ -41,9 +44,19 @@ const ShopifyDevelopmentRoute = ShopifyDevelopmentRouteImport.update({
   path: '/shopify-development',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SeoOptimizationRoute = SeoOptimizationRouteImport.update({
   id: '/seo-optimization',
   path: '/seo-optimization',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortfolioRoute = PortfolioRouteImport.update({
+  id: '/portfolio',
+  path: '/portfolio',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PackagesRoute = PackagesRouteImport.update({
@@ -71,6 +84,11 @@ const BrandingRoute = BrandingRouteImport.update({
   path: '/branding',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -79,12 +97,15 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/branding': typeof BrandingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/e-commerce': typeof ECommerceRoute
   '/packages': typeof PackagesRoute
+  '/portfolio': typeof PortfolioRoute
   '/seo-optimization': typeof SeoOptimizationRoute
+  '/services': typeof ServicesRoute
   '/shopify-development': typeof ShopifyDevelopmentRoute
   '/ui-ux-design': typeof UiUxDesignRoute
   '/website-development': typeof WebsiteDevelopmentRoute
@@ -92,12 +113,15 @@ export interface FileRoutesByFullPath {
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/branding': typeof BrandingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/e-commerce': typeof ECommerceRoute
   '/packages': typeof PackagesRoute
+  '/portfolio': typeof PortfolioRoute
   '/seo-optimization': typeof SeoOptimizationRoute
+  '/services': typeof ServicesRoute
   '/shopify-development': typeof ShopifyDevelopmentRoute
   '/ui-ux-design': typeof UiUxDesignRoute
   '/website-development': typeof WebsiteDevelopmentRoute
@@ -106,12 +130,15 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
   '/branding': typeof BrandingRoute
   '/contact': typeof ContactRoute
   '/digital-marketing': typeof DigitalMarketingRoute
   '/e-commerce': typeof ECommerceRoute
   '/packages': typeof PackagesRoute
+  '/portfolio': typeof PortfolioRoute
   '/seo-optimization': typeof SeoOptimizationRoute
+  '/services': typeof ServicesRoute
   '/shopify-development': typeof ShopifyDevelopmentRoute
   '/ui-ux-design': typeof UiUxDesignRoute
   '/website-development': typeof WebsiteDevelopmentRoute
@@ -121,12 +148,15 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/about'
     | '/branding'
     | '/contact'
     | '/digital-marketing'
     | '/e-commerce'
     | '/packages'
+    | '/portfolio'
     | '/seo-optimization'
+    | '/services'
     | '/shopify-development'
     | '/ui-ux-design'
     | '/website-development'
@@ -134,12 +164,15 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/about'
     | '/branding'
     | '/contact'
     | '/digital-marketing'
     | '/e-commerce'
     | '/packages'
+    | '/portfolio'
     | '/seo-optimization'
+    | '/services'
     | '/shopify-development'
     | '/ui-ux-design'
     | '/website-development'
@@ -147,12 +180,15 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/about'
     | '/branding'
     | '/contact'
     | '/digital-marketing'
     | '/e-commerce'
     | '/packages'
+    | '/portfolio'
     | '/seo-optimization'
+    | '/services'
     | '/shopify-development'
     | '/ui-ux-design'
     | '/website-development'
@@ -161,12 +197,15 @@ export interface FileRouteTypes {
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
   BrandingRoute: typeof BrandingRoute
   ContactRoute: typeof ContactRoute
   DigitalMarketingRoute: typeof DigitalMarketingRoute
   ECommerceRoute: typeof ECommerceRoute
   PackagesRoute: typeof PackagesRoute
+  PortfolioRoute: typeof PortfolioRoute
   SeoOptimizationRoute: typeof SeoOptimizationRoute
+  ServicesRoute: typeof ServicesRoute
   ShopifyDevelopmentRoute: typeof ShopifyDevelopmentRoute
   UiUxDesignRoute: typeof UiUxDesignRoute
   WebsiteDevelopmentRoute: typeof WebsiteDevelopmentRoute
@@ -203,11 +242,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ShopifyDevelopmentRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/seo-optimization': {
       id: '/seo-optimization'
       path: '/seo-optimization'
       fullPath: '/seo-optimization'
       preLoaderRoute: typeof SeoOptimizationRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portfolio': {
+      id: '/portfolio'
+      path: '/portfolio'
+      fullPath: '/portfolio'
+      preLoaderRoute: typeof PortfolioRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/packages': {
@@ -245,6 +298,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BrandingRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -257,12 +317,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
   BrandingRoute: BrandingRoute,
   ContactRoute: ContactRoute,
   DigitalMarketingRoute: DigitalMarketingRoute,
   ECommerceRoute: ECommerceRoute,
   PackagesRoute: PackagesRoute,
+  PortfolioRoute: PortfolioRoute,
   SeoOptimizationRoute: SeoOptimizationRoute,
+  ServicesRoute: ServicesRoute,
   ShopifyDevelopmentRoute: ShopifyDevelopmentRoute,
   UiUxDesignRoute: UiUxDesignRoute,
   WebsiteDevelopmentRoute: WebsiteDevelopmentRoute,

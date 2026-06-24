@@ -22,9 +22,18 @@ export function Work() {
               Recent <span className="chrome-text">obsessions</span>.
             </h2>
           </div>
-          <div className="hidden text-right text-xs uppercase tracking-[0.25em] text-muted-foreground md:block">
-            <div>2024 — 2026</div>
-            <div className="mt-1">Worldwide</div>
+          <div className="hidden md:flex items-center gap-4">
+            <a
+              href="/portfolio"
+              className="btn-magnetic inline-flex items-center gap-2 rounded-full glass px-6 py-3 text-sm font-semibold"
+            >
+              View All
+              <span className="transition-transform group-hover:translate-x-1">→</span>
+            </a>
+            <div className="text-right text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              <div>2024 — 2026</div>
+              <div className="mt-1">Worldwide</div>
+            </div>
           </div>
         </div>
 

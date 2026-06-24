@@ -57,8 +57,8 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 1.1 }}
           className="mt-10 flex flex-wrap items-center justify-center gap-4"
         >
-          <a href="#work" className="btn-magnetic group flex items-center gap-2 rounded-full bg-primary px-7 py-4 font-medium text-primary-foreground">
-            View Work
+          <a href="/portfolio" className="btn-magnetic group flex items-center gap-2 rounded-full bg-primary px-7 py-4 font-medium text-primary-foreground">
+            View Portfolio
             <span className="transition-transform group-hover:translate-x-1">→</span>
           </a>
           <a href="tel:+923041625523" className="glass btn-magnetic rounded-full px-7 py-4 font-medium">

@@ -7,8 +7,8 @@ import { Contact as ContactComponent } from "@/components/portfolio/Contact";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Codi Tech — Contact Us" },
-      { name: "description", content: "Get in touch with Codi Tech for premium web development and design services." },
+      { title: "Contact — Codi Tech" },
+      { name: "description", content: "Get in touch with us for your digital project needs." },
     ],
   }),
   component: ContactPage,
@@ -19,9 +19,9 @@ function ContactPage() {
     <main className="relative noise min-h-screen">
       <CursorGlow />
       <Nav />
-      <div className="pt-32">
+      <section className="pt-40">
         <ContactComponent />
-      </div>
+      </section>
       <Footer />
     </main>
   );

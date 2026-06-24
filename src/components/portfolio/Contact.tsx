@@ -21,7 +21,7 @@ function getEmailErrorMessage(error: unknown) {
   return "Message could not be sent.";
 }
 
-export function Contact() {
+export function Contact({ hideForm = false }: { hideForm?: boolean }) {
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const [statusMessage, setStatusMessage] = useState("");
 
@@ -98,35 +98,37 @@ export function Contact() {
           Any questions or remarks? Just write us a message!
         </p>
 
-        <form onSubmit={handleSubmit} className="mx-auto mt-12 grid max-w-2xl gap-4 text-left">
-          <div className="grid gap-4 md:grid-cols-2">
-            <div>
-              <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">First Name</label>
-              <input name="first_name" placeholder="John" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
+        {!hideForm && (
+          <form onSubmit={handleSubmit} className="mx-auto mt-12 grid max-w-2xl gap-4 text-left">
+            <div className="grid gap-4 md:grid-cols-2">
+              <div>
+                <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">First Name</label>
+                <input name="first_name" placeholder="John" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
+              </div>
+              <div>
+                <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Last Name</label>
+                <input name="last_name" placeholder="Doe" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
+              </div>
             </div>
             <div>
-              <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Last Name</label>
-              <input name="last_name" placeholder="Doe" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
+              <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Email</label>
+              <input name="user_email" placeholder="Enter a valid email address" type="email" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
             </div>
-          </div>
-          <div>
-            <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Email</label>
-            <input name="user_email" placeholder="Enter a valid email address" type="email" required className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
-          </div>
-          <div>
-            <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Message</label>
-            <textarea name="message" placeholder="How can we help you?" rows={5} required
-              className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
-          </div>
-          <button type="submit" disabled={status === "sending"} className="mt-4 w-full rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 py-4 font-semibold text-background transition disabled:cursor-not-allowed disabled:opacity-60">
-            {status === "sending" ? "SENDING..." : "SUBMIT MESSAGE"}
-          </button>
-          {statusMessage ? (
-            <p className={`text-center text-sm ${status === "error" ? "text-red-400" : "text-primary"}`}>
-              {statusMessage}
-            </p>
-          ) : null}
-        </form>
+            <div>
+              <label className="text-xs uppercase tracking-[0.25em] text-muted-foreground mb-1 block">Message</label>
+              <textarea name="message" placeholder="How can we help you?" rows={5} required
+                className="glass rounded-2xl px-5 py-4 outline-none transition focus:border-primary focus:shadow-[0_0_30px_oklch(0.55_0.18_195/0.3)] w-full" />
+            </div>
+            <button type="submit" disabled={status === "sending"} className="mt-4 w-full rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-pink-500 py-4 font-semibold text-background transition disabled:cursor-not-allowed disabled:opacity-60">
+              {status === "sending" ? "SENDING..." : "SUBMIT MESSAGE"}
+            </button>
+            {statusMessage ? (
+              <p className={`text-center text-sm ${status === "error" ? "text-red-400" : "text-primary"}`}>
+                {statusMessage}
+              </p>
+            ) : null}
+          </form>
+        )}
 
         <div className="mt-16 grid gap-8 md:grid-cols-3">
           {socials.map((s) => {

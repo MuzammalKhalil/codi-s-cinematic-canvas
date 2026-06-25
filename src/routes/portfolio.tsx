@@ -128,7 +128,10 @@ function PortfolioPage() {
 
           {/* Scrolling Banner */}
           <div className="overflow-hidden mb-12 -mx-6">
-            <div className="flex gap-8 animate-scroll items-end">
+            <div className="flex gap-6 animate-scroll items-center" style={{
+              perspective: "1500px",
+              transformStyle: "preserve-3d",
+            }}>
               {/* Duplicate images for seamless scroll */}
               {[
                 "/1.png",
@@ -149,22 +152,30 @@ function PortfolioPage() {
                 "/7.png",
                 "/8.png",
                 "/9.png",
-              ].map((imgSrc, i) => (
-                <div 
-                  key={i} 
-                  className="flex-shrink-0 w-80 overflow-hidden rounded-2xl"
-                  style={{
-                    transform: `perspective(1000px) rotateY(${(i % 2 === 0) ? -10 : 10}deg) translateY(0)`,
-                    boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
-                  }}
-                >
-                  <img
-                    src={imgSrc}
-                    alt={`Banner ${i+1}`}
-                    className="w-full h-56 object-cover"
-                  />
-                </div>
-              ))}
+              ].map((imgSrc, i) => {
+                const indexInSet = i % 9;
+                const totalInSet = 9;
+                // Calculate rotation for curved arc
+                const rotationY = (indexInSet - (totalInSet - 1) / 2) * 12;
+                const translateY = Math.abs(rotationY) * 1.5;
+                
+                return (
+                  <div 
+                    key={i} 
+                    className="flex-shrink-0 w-80 overflow-hidden rounded-2xl"
+                    style={{
+                      transform: `perspective(1500px) rotateY(${rotationY}deg) translateY(${translateY}px) translateZ(-100px)`,
+                      boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
+                    }}
+                  >
+                    <img
+                      src={imgSrc}
+                      alt={`Banner ${i+1}`}
+                      className="w-full h-56 object-cover"
+                    />
+                  </div>
+                );
+              })}
             </div>
           </div>
 
@@ -174,7 +185,7 @@ function PortfolioPage() {
               100% { transform: translateX(-50%); }
             }
             .animate-scroll {
-              animation: scroll 30s linear infinite;
+              animation: scroll 40s linear infinite;
             }
           `}</style>
 

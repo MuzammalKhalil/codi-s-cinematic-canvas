@@ -101,7 +101,17 @@ function PortfolioPage() {
             </p>
           </motion.div>
 
-
+          {/* Banner Filter Buttons */}
+          <div className="flex justify-center gap-3 mb-12 flex-wrap">
+            {["Websites", "Videos", "Brandings", "Graphic Design", "SEO"].map((category) => (
+              <button
+                key={category}
+                className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary hover:bg-primary hover:text-white"
+              >
+                {category}
+              </button>
+            ))}
+          </div>
 
           {/* Scrolling Banner */}
           <div className="overflow-hidden mb-12 w-screen left-1/2 relative -translate-x-1/2">

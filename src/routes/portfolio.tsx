@@ -164,7 +164,7 @@ function PortfolioPage() {
               100% { transform: translateX(-50%); }
             }
             .animate-scroll {
-              animation: marquee 30s linear infinite;
+              animation: marquee 15s linear infinite;
             }
             .animate-scroll:hover {
               animation-play-state: paused;

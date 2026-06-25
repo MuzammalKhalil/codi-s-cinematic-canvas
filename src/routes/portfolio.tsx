@@ -103,27 +103,27 @@ function PortfolioPage() {
           {/* Filter Buttons */}
           <div className="flex justify-center gap-3 mb-12 flex-wrap">
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-primary text-white border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
             >
               Websites
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
             >
               Videos
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
             >
               Brandings
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
             >
               Graphic Design
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
             >
               SEO
             </button>

@@ -84,7 +84,7 @@ function PortfolioPage() {
             <p className="text-sm text-primary uppercase tracking-[0.2em] mb-2">Portfolio</p>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">DISCOVER OUR WORK</h1>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Codi Tech delivers end‑to‑end technology services — from ideation to execution — tailored for modern businesses.
+              Codi Tech specializes in web development, WordPress, and digital solutions. Explore our portfolio to see the work we've delivered for clients worldwide.
             </p>
           </motion.div>
 

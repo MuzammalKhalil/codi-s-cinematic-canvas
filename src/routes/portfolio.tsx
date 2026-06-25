@@ -166,18 +166,18 @@ function PortfolioPage() {
             <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8">Organized by technology platform and industry</p>
             <div className="flex justify-center gap-2 md:gap-3 flex-wrap">
               {["All", "Custom", "WordPress", "Woocommerce", "Shopify"].map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setActiveCategory(category)}
-                  className={`px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-lg font-medium transition-all border-2 ${
-                    activeCategory === category
-                      ? "bg-primary text-white border-primary"
-                      : "bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
-                  }`}
-                >
-                  {category}
-                </button>
-              ))}
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-lg font-medium transition-all border-2 ${
+                  activeCategory === category
+                    ? "bg-primary text-white border-primary"
+                    : "bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary hover:bg-transparent"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
             </div>
           </div>
 

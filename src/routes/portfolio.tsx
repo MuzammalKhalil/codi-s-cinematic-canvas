@@ -127,7 +127,7 @@ function PortfolioPage() {
           </div>
 
           {/* Scrolling Banner */}
-          <div className="overflow-hidden mb-12 -mx-6">
+          <div className="overflow-hidden mb-12 w-screen left-1/2 relative -translate-x-1/2">
             <div className="flex animate-scroll items-end" style={{
               perspective: "2000px",
               perspectiveOrigin: "center center",
@@ -154,7 +154,7 @@ function PortfolioPage() {
                 return (
                   <div 
                     key={i} 
-                    className="flex-shrink-0 w-96 mx-2 overflow-hidden"
+                    className="flex-shrink-0 w-96 mx-3 overflow-hidden rounded-2xl"
                     style={{
                       transform: `perspective(2000px) rotateY(${offsetFromCenter * 18}deg) translateY(${Math.abs(offsetFromCenter) * 30}px)`,
                     }}

@@ -169,7 +169,7 @@ function PortfolioPage() {
                   className={`px-6 py-3 rounded-full text-lg font-medium transition-all border-2 ${
                     activeCategory === category
                       ? "bg-primary text-white border-primary"
-                      : "bg-white border-gray-300 text-gray-700 hover:border-primary"
+                      : "bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
                   }`}
                 >
                   {category}

@@ -79,6 +79,15 @@ const portfolioProjects = [
     tags: ["Consulting", "WordPress", "Professional"],
     image: "/mjhernon-co-uk.png",
   },
+  {
+    id: "12",
+    category: "WordPress",
+    title: "Rixx Tech",
+    description: "Tech company website built with WordPress, featuring services and company information.",
+    tags: ["Tech", "WordPress", "Business"],
+    image: "/rixxtech.png",
+    link: "https://rixxtech.com/",
+  },
 ];
 
 const categories = ["All", "React", "E-commerce", "WordPress", "WebGL", "Mobile"];
@@ -136,59 +145,76 @@ function PortfolioPage() {
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, i) => (
-              <motion.div
-                key={project.id}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                className="group relative overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur transition-all hover:border-primary/30 hover:shadow-glow"
-                style={{ boxShadow: "0 0 40px oklch(0.55 0.18 195 / 0.1)" }}
-              >
-                {/* Image Area */}
-                <div className="relative h-64 overflow-hidden">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="absolute w-full h-auto object-cover transition-all duration-[5000ms] ease-in-out group-hover:translate-y-[-calc(100%-256px)]"
-                      style={{ minHeight: "100%", top: 0 }}
-                    />
-                  ) : (
+            {filteredProjects.map((project, i) => {
+              const CardContent = (
+                <motion.div
+                  key={project.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: i * 0.1 }}
+                  className="group relative overflow-hidden rounded-3xl border border-border bg-card/40 backdrop-blur transition-all hover:border-primary/30 hover:shadow-glow"
+                  style={{ boxShadow: "0 0 40px oklch(0.55 0.18 195 / 0.1)" }}
+                >
+                  {/* Image Area */}
+                  <div className="relative h-64 overflow-hidden">
+                    {project.image ? (
+                      <img
+                        src={project.image}
+                        alt={project.title}
+                        className="absolute w-full h-auto object-cover transition-all duration-[5000ms] ease-in-out group-hover:translate-y-[-calc(100%-256px)]"
+                        style={{ minHeight: "100%", top: 0 }}
+                      />
+                    ) : (
+                      <div
+                        className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
+                        style={{ background: project.gradient }}
+                      />
+                    )}
+                    <div className="absolute inset-0 grid-bg opacity-40" />
                     <div
-                      className="absolute inset-0 transition-transform duration-700 group-hover:scale-110"
-                      style={{ background: project.gradient }}
+                      className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                      style={{
+                        background: "radial-gradient(circle at 50% 50%, oklch(0.7 0.18 195 / 0.3), transparent 70%)",
+                      }}
                     />
-                  )}
-                  <div className="absolute inset-0 grid-bg opacity-40" />
-                  <div
-                    className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-                    style={{
-                      background: "radial-gradient(circle at 50% 50%, oklch(0.7 0.18 195 / 0.3), transparent 70%)",
-                    }}
-                  />
-                  {/* Tags at top */}
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className="glass px-3 py-1 rounded-full text-xs text-primary">{(2024 - (i % 2)).toString()}</span>
-                    <span className="glass px-3 py-1 rounded-full text-xs text-muted-foreground">{project.category}</span>
+                    {/* Tags at top */}
+                    <div className="absolute top-4 left-4 flex gap-2">
+                      <span className="glass px-3 py-1 rounded-full text-xs text-primary">{(2024 - (i % 2)).toString()}</span>
+                      <span className="glass px-3 py-1 rounded-full text-xs text-muted-foreground">{project.category}</span>
+                    </div>
                   </div>
-                </div>
 
-                {/* Content Area */}
-                <div className="p-6">
-                  <h3 className="text-xl font-display font-semibold mb-2">{project.title}</h3>
-                  <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag, idx) => (
-                      <span key={idx} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
-                        {tag}
-                      </span>
-                    ))}
+                  {/* Content Area */}
+                  <div className="p-6">
+                    <h3 className="text-xl font-display font-semibold mb-2">{project.title}</h3>
+                    <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag, idx) => (
+                        <span key={idx} className="text-xs bg-primary/10 text-primary px-3 py-1 rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
-                </div>
-              </motion.div>
-            ))}
+                </motion.div>
+              );
+
+              if (project.link) {
+                return (
+                  <a 
+                    key={project.id}
+                    href={project.link} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="block"
+                  >
+                    {CardContent}
+                  </a>
+                );
+              }
+              return CardContent;
+            })}
           </div>
         </div>
       </div>

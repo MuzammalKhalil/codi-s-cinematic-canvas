@@ -162,7 +162,7 @@ function PortfolioPage() {
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Our Complete Portfolio</h2>
             <p className="text-muted-foreground text-lg mb-8">Organized by technology platform and industry</p>
             <div className="flex justify-center gap-3 flex-wrap">
-              {["All", "Custom", "WordPress", "Woocommerce", "Shopify", "Squarespace"].map((category) => (
+              {["All", "Custom", "WordPress", "Woocommerce", "Shopify"].map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}

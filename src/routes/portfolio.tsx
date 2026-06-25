@@ -6,38 +6,6 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const portfolioProjects = [
-  {
-    id: "1",
-    category: "React",
-    title: "Lumen OS Dashboard",
-    description: "A cinematic SaaS dashboard with WebGL particle effects and real-time analytics integration.",
-    tags: ["React", "Three.js", "Framer Motion"],
-    gradient: "linear-gradient(135deg, #004242, #1a1a2e)",
-  },
-  {
-    id: "2",
-    category: "E-commerce",
-    title: "Atelier Noir Luxury Store",
-    description: "Premium fashion e-commerce site with editorial scroll storytelling and immersive product showcases.",
-    tags: ["Next.js", "GSAP", "Stripe"],
-    gradient: "linear-gradient(135deg, #1B1212, #343434)",
-  },
-  {
-    id: "3",
-    category: "WebGL",
-    title: "Halo Studio Website",
-    description: "Award-winning creative agency site with shader transitions and award-winning UI design.",
-    tags: ["Three.js", "Lenis", "WebGL"],
-    gradient: "linear-gradient(135deg, #0a3d3d, #004242)",
-  },
-  {
-    id: "4",
-    category: "Mobile",
-    title: "Pulse Wallet",
-    description: "Kinetic mobile wallet UI with dynamic data visualizations and smooth micro-interactions.",
-    tags: ["React Native", "Reanimated", "Fintech"],
-    gradient: "linear-gradient(135deg, #1a1a1a, #003a3a)",
-  },
   // WordPress Projects
   {
     id: "7",
@@ -90,7 +58,7 @@ const portfolioProjects = [
   },
 ];
 
-const categories = ["All", "React", "E-commerce", "WordPress", "WebGL", "Mobile"];
+const categories = ["All", "WordPress"];
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({

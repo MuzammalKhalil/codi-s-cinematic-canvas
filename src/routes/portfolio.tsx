@@ -81,8 +81,11 @@ function PortfolioPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl md:text-5xl font-display font-semibold mb-2">Our Complete Portfolio</h1>
-            <p className="text-muted-foreground">Organized by technology platform and industry</p>
+            <p className="text-sm text-primary uppercase tracking-[0.2em] mb-2">Portfolio</p>
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">DISCOVER OUR WORK</h1>
+            <p className="text-muted-foreground max-w-2xl mx-auto">
+              Codi Tech delivers end‑to‑end technology services — from ideation to execution — tailored for modern businesses.
+            </p>
           </motion.div>
 
           {/* Projects Grid */}

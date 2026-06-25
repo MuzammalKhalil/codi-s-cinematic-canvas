@@ -128,9 +128,9 @@ function PortfolioPage() {
 
           {/* Scrolling Banner */}
           <div className="overflow-hidden mb-12 -mx-6">
-            <div className="flex gap-6 animate-scroll items-center" style={{
-              perspective: "1500px",
-              transformStyle: "preserve-3d",
+            <div className="flex animate-scroll items-end" style={{
+              perspective: "2000px",
+              perspectiveOrigin: "center center",
             }}>
               {/* Duplicate images for seamless scroll */}
               {[
@@ -140,38 +140,29 @@ function PortfolioPage() {
                 "/4.png",
                 "/5.png",
                 "/6.png",
-                "/7.png",
-                "/8.png",
-                "/9.png",
                 "/1.png",
                 "/2.png",
                 "/3.png",
                 "/4.png",
                 "/5.png",
                 "/6.png",
-                "/7.png",
-                "/8.png",
-                "/9.png",
               ].map((imgSrc, i) => {
-                const indexInSet = i % 9;
-                const totalInSet = 9;
-                // Calculate rotation for curved arc
-                const rotationY = (indexInSet - (totalInSet - 1) / 2) * 12;
-                const translateY = Math.abs(rotationY) * 1.5;
+                const indexInSet = i % 6;
+                const totalInSet = 6;
+                const offsetFromCenter = indexInSet - (totalInSet - 1) / 2;
                 
                 return (
                   <div 
                     key={i} 
-                    className="flex-shrink-0 w-80 overflow-hidden rounded-2xl"
+                    className="flex-shrink-0 w-96 mx-2 overflow-hidden"
                     style={{
-                      transform: `perspective(1500px) rotateY(${rotationY}deg) translateY(${translateY}px) translateZ(-100px)`,
-                      boxShadow: "0 20px 50px rgba(0,0,0,0.3)",
+                      transform: `perspective(2000px) rotateY(${offsetFromCenter * 18}deg) translateY(${Math.abs(offsetFromCenter) * 30}px)`,
                     }}
                   >
                     <img
                       src={imgSrc}
                       alt={`Banner ${i+1}`}
-                      className="w-full h-56 object-cover"
+                      className="w-full h-auto"
                     />
                   </div>
                 );
@@ -185,7 +176,7 @@ function PortfolioPage() {
               100% { transform: translateX(-50%); }
             }
             .animate-scroll {
-              animation: scroll 40s linear infinite;
+              animation: scroll 30s linear infinite;
             }
           `}</style>
 

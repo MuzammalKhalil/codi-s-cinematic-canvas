@@ -3,7 +3,6 @@ import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import { CursorGlow } from "@/components/portfolio/CursorGlow";
 import { motion } from "framer-motion";
-
 import { useState } from "react";
 
 const portfolioProjects = [
@@ -74,6 +73,7 @@ export const Route = createFileRoute("/portfolio")({
 
 function PortfolioPage() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
   const filteredProjects = portfolioProjects.filter(project =>
     activeCategory === "All" ? true : project.category === activeCategory
@@ -203,7 +203,10 @@ function PortfolioPage() {
                   style={{ boxShadow: "0 0 40px oklch(0.55 0.18 195 / 0.1)" }}
                 >
                   {/* Image Area */}
-                  <div className="relative h-64 overflow-hidden">
+                  <div className="relative h-64 overflow-hidden cursor-pointer" onClick={(e) => {
+                    e.stopPropagation();
+                    if (project.image) setModalImage(project.image);
+                  }}>
                     {project.image ? (
                       <img
                         src={project.image}
@@ -233,7 +236,12 @@ function PortfolioPage() {
 
                   {/* Content Area */}
                   <div className="p-6">
-                    <h3 className="text-xl font-display font-semibold mb-2">{project.title}</h3>
+                    <h3 className="text-xl font-display font-semibold mb-2 cursor-pointer hover:text-primary transition-colors" onClick={(e) => {
+                      e.stopPropagation();
+                      if (project.link) window.open(project.link, "_blank");
+                    }}>
+                      {project.title}
+                    </h3>
                     <p className="text-muted-foreground text-sm mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
                       {project.tags.map((tag, idx) => (
@@ -265,6 +273,21 @@ function PortfolioPage() {
         </div>
       </div>
       <Footer />
+
+      {/* Modal for full image */}
+      {modalImage && (
+        <div className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4" onClick={() => setModalImage(null)}>
+          <button className="absolute top-4 right-4 text-white text-4xl cursor-pointer hover:text-gray-300 transition-colors" onClick={() => setModalImage(null)}>
+            &times;
+          </button>
+          <img 
+            src={modalImage} 
+            alt="Full size" 
+            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl" 
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </main>
   );
 }

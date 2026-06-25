@@ -108,22 +108,22 @@ function PortfolioPage() {
               Websites
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
             >
               Videos
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
             >
               Brandings
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
             >
               Graphic Design
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
             >
               SEO
             </button>

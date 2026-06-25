@@ -93,7 +93,7 @@ function PortfolioPage() {
           >
             <p className="text-sm text-primary uppercase tracking-widest mb-3">Portfolio</p>
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
-              <span className="text-gray-500">DISCOVER</span> OUR WORK
+              <span className="text-primary">DISCOVER</span> OUR WORK
             </h1>
             <p className="text-muted-foreground max-w-3xl mx-auto mb-8 text-lg">
               Codi Tech delivers end-to-end technology services - from ideation to execution - tailored for modern businesses.
@@ -108,22 +108,22 @@ function PortfolioPage() {
               Websites
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
             >
               Videos
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
             >
               Brandings
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
             >
               Graphic Design
             </button>
             <button
-              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
             >
               SEO
             </button>

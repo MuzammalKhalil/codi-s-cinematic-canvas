@@ -91,36 +91,39 @@ function PortfolioPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">Our Complete Portfolio</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
-              Organized by technology platform and industry
+            <p className="text-sm text-primary uppercase tracking-widest mb-3">Portfolio</p>
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">
+              <span className="text-gray-500">DISCOVER</span> OUR WORK
+            </h1>
+            <p className="text-muted-foreground max-w-3xl mx-auto mb-8 text-lg">
+              Codi Tech delivers end-to-end technology services - from ideation to execution - tailored for modern businesses.
             </p>
           </motion.div>
 
           {/* Filter Buttons */}
           <div className="flex justify-center gap-3 mb-12 flex-wrap">
             <button
-              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-primary text-white border-primary shadow-glow"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-primary text-white border-primary"
             >
               Websites
             </button>
             <button
-              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-primary"
             >
               Videos
             </button>
             <button
-              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-primary"
             >
               Brandings
             </button>
             <button
-              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-primary"
             >
               Graphic Design
             </button>
             <button
-              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+              className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-white border-gray-300 text-gray-700 hover:border-primary"
             >
               SEO
             </button>

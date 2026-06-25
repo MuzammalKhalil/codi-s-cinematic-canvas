@@ -128,18 +128,25 @@ function PortfolioPage() {
 
           {/* Scrolling Banner */}
           <div className="overflow-hidden mb-12 -mx-6">
-            <div className="flex gap-4 animate-scroll">
+            <div className="flex gap-8 animate-scroll items-end">
               {/* Duplicate images for seamless scroll */}
               {[
                 ...portfolioProjects,
                 ...portfolioProjects,
                 ...portfolioProjects,
               ].map((project, i) => (
-                <div key={i} className="flex-shrink-0 w-80 h-48 overflow-hidden rounded-2xl">
+                <div 
+                  key={i} 
+                  className="flex-shrink-0 w-80 overflow-hidden rounded-2xl"
+                  style={{
+                    transform: `perspective(1000px) rotateY(${(i % 2 === 0) ? -10 : 10}deg) translateY(0)`,
+                    boxShadow: "0 20px 40px rgba(0,0,0,0.3)",
+                  }}
+                >
                   <img
                     src={project.image}
                     alt={project.title}
-                    className="w-full h-full object-cover"
+                    className="w-full h-56 object-cover"
                   />
                 </div>
               ))}

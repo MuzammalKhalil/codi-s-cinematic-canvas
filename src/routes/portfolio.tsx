@@ -59,7 +59,17 @@ const portfolioProjects = [
   },
 ];
 
-const categories = ["All", "HTML", "WordPress", "Woocommerce", "Shopify", "Squarespace"];
+const bannerImages = [
+  "/1.png",
+  "/2.png",
+  "/3.png",
+  "/4.png",
+  "/5.png",
+  "/6.png",
+  "/7.png",
+  "/8.png",
+  "/9.png",
+];
 
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
@@ -106,7 +116,7 @@ function PortfolioPage() {
             {["Websites", "Videos", "Brandings", "Graphic Design", "SEO"].map((category) => (
               <button
                 key={category}
-                className="px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary hover:bg-primary hover:text-white"
+                className="px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary hover:bg-transparent hover:text-primary"
               >
                 {category}
               </button>
@@ -114,49 +124,137 @@ function PortfolioPage() {
           </div>
 
           {/* Scrolling Banner */}
-          <div className="overflow-hidden mb-12 w-screen left-1/2 relative -translate-x-1/2">
-            <div className="flex animate-scroll items-center">
-              {/* Duplicate images for seamless scroll */}
-              {[
-                "/1.png",
-                "/2.png",
-                "/3.png",
-                "/4.png",
-                "/5.png",
-                "/6.png",
-                "/1.png",
-                "/2.png",
-                "/3.png",
-                "/4.png",
-                "/5.png",
-                "/6.png",
-              ].map((imgSrc, i) => {
-                return (
-                  <div 
-                    key={i} 
-                    className="flex-shrink-0 w-48 sm:w-64 md:w-80 mx-1 md:mx-2 overflow-hidden rounded-lg md:rounded-xl"
-                  >
-                    <img
-                      src={imgSrc}
-                      alt={`Banner ${i+1}`}
-                      className="w-full h-32 sm:h-40 md:h-52 object-cover"
-                    />
-                  </div>
-                );
-              })}
+          <div className="portfolio-banner mb-16 w-screen left-1/2 relative -translate-x-1/2">
+            <div className="portfolio-banner-track">
+              {[...bannerImages, ...bannerImages].map((imgSrc, i) => (
+                <div key={`${imgSrc}-${i}`} className="portfolio-banner-card">
+                  <img
+                    src={imgSrc}
+                    alt={`Portfolio showcase ${i + 1}`}
+                    className="portfolio-banner-image"
+                  />
+                </div>
+              ))}
             </div>
           </div>
 
           <style>{`
-            @keyframes marquee {
+            .portfolio-banner {
+              height: clamp(190px, 21vw, 320px);
+              overflow: hidden;
+              perspective: 1200px;
+              transform-style: preserve-3d;
+            }
+
+            .portfolio-banner::before,
+            .portfolio-banner::after {
+              content: "";
+              position: absolute;
+              top: 0;
+              bottom: 0;
+              width: min(12vw, 170px);
+              z-index: 2;
+              pointer-events: none;
+            }
+
+            .portfolio-banner::before {
+              left: 0;
+              background: linear-gradient(90deg, var(--background), transparent);
+            }
+
+            .portfolio-banner::after {
+              right: 0;
+              background: linear-gradient(270deg, var(--background), transparent);
+            }
+
+            .portfolio-banner-track {
+              display: flex;
+              align-items: center;
+              gap: clamp(18px, 2.4vw, 34px);
+              width: max-content;
+              height: 100%;
+              padding-inline: clamp(24px, 5vw, 80px);
+              animation: portfolio-banner-marquee 34s linear infinite;
+              will-change: transform;
+            }
+
+            .portfolio-banner-card {
+              flex: 0 0 auto;
+              width: clamp(210px, 21vw, 340px);
+              height: clamp(120px, 11vw, 190px);
+              overflow: hidden;
+              border-radius: 0.65rem;
+              background: oklch(1 0 0 / 0.06);
+              box-shadow: 0 24px 55px oklch(0 0 0 / 0.34);
+              transform: translateZ(0) rotateY(var(--card-rotate, 0deg)) skewY(var(--card-skew, 0deg));
+              transform-origin: center;
+              backface-visibility: hidden;
+            }
+
+            .portfolio-banner-card:nth-child(6n + 1) {
+              --card-rotate: 18deg;
+              --card-skew: 2deg;
+            }
+
+            .portfolio-banner-card:nth-child(6n + 2) {
+              --card-rotate: 10deg;
+              --card-skew: -1.25deg;
+            }
+
+            .portfolio-banner-card:nth-child(6n + 3) {
+              --card-rotate: 0deg;
+              --card-skew: 0deg;
+            }
+
+            .portfolio-banner-card:nth-child(6n + 4) {
+              --card-rotate: -8deg;
+              --card-skew: 1deg;
+            }
+
+            .portfolio-banner-card:nth-child(6n + 5) {
+              --card-rotate: -15deg;
+              --card-skew: -1.5deg;
+            }
+
+            .portfolio-banner-card:nth-child(6n) {
+              --card-rotate: -22deg;
+              --card-skew: 2deg;
+            }
+
+            .portfolio-banner-image {
+              display: block;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transform: scale(1.02);
+            }
+
+            @keyframes portfolio-banner-marquee {
               0% { transform: translateX(0); }
               100% { transform: translateX(-50%); }
             }
-            .animate-scroll {
-              animation: marquee 40s linear infinite;
+
+            @media (max-width: 640px) {
+              .portfolio-banner {
+                height: 175px;
+              }
+
+              .portfolio-banner-track {
+                animation-duration: 28s;
+                gap: 16px;
+                padding-inline: 18px;
+              }
+
+              .portfolio-banner-card {
+                width: 205px;
+                height: 118px;
+              }
             }
-            .animate-scroll:hover {
-              animation-play-state: paused;
+
+            @media (prefers-reduced-motion: reduce) {
+              .portfolio-banner-track {
+                animation-duration: 90s;
+              }
             }
           `}</style>
 

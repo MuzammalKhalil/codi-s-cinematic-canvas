@@ -6,6 +6,17 @@ import { motion } from "framer-motion";
 import { Link } from "@tanstack/react-router";
 import { servicesData } from "@/data/servicesData";
 
+const serviceRoutes: Record<string, string> = {
+  "website-development": "/website-development",
+  "ui-ux-design": "/ui-ux-design",
+  "seo-optimization": "/seo-optimization",
+  branding: "/branding",
+  ecommerce: "/e-commerce",
+  "digital-marketing": "/digital-marketing",
+  "shopify-development": "/shopify-development",
+  "website-maintenance": "/website-maintenance",
+};
+
 export const Route = createFileRoute("/services")({
   head: () => ({
     meta: [
@@ -19,6 +30,7 @@ export const Route = createFileRoute("/services")({
 function ServicesPage() {
   const servicesList = Object.entries(servicesData).map(([key, data]) => ({
     key,
+    route: serviceRoutes[key] ?? `/${key}`,
     badge: data.hero.badge,
     title: data.about.title,
     description: data.about.description,
@@ -56,6 +68,17 @@ function ServicesPage() {
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               We provide a comprehensive suite of services designed to build, grow, and maintain your digital presence.
             </p>
+            <div className="mt-8 flex flex-wrap justify-center gap-3">
+              {servicesList.map((service) => (
+                <Link
+                  key={service.key}
+                  to={service.route}
+                  className="rounded-full border border-border bg-white/[0.03] px-4 py-2 text-sm text-muted-foreground transition hover:border-primary/50 hover:bg-primary/10 hover:text-primary"
+                >
+                  {service.badge}
+                </Link>
+              ))}
+            </div>
           </motion.div>
         </div>
       </section>
@@ -86,7 +109,7 @@ function ServicesPage() {
                   ))}
                 </div>
                 <Link
-                  to={`/${service.key}`}
+                  to={service.route}
                   className="inline-flex items-center gap-2 text-primary font-semibold hover:gap-3 transition-all"
                 >
                   Learn more <span>→</span>

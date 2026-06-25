@@ -115,11 +115,7 @@ function PortfolioPage() {
 
           {/* Scrolling Banner */}
           <div className="overflow-hidden mb-12 w-screen left-1/2 relative -translate-x-1/2">
-            <div className="flex animate-scroll items-center" style={{
-              perspective: "1500px",
-              perspectiveOrigin: "center center",
-              transformStyle: "preserve-3d",
-            }}>
+            <div className="flex animate-scroll items-center">
               {/* Duplicate images for seamless scroll */}
               {[
                 "/1.png",
@@ -135,17 +131,10 @@ function PortfolioPage() {
                 "/5.png",
                 "/6.png",
               ].map((imgSrc, i) => {
-                // Alternate rotation for curved effect
-                const rotate = (i % 2 === 0) ? -15 : 15;
-                
                 return (
                   <div 
                     key={i} 
                     className="flex-shrink-0 w-80 mx-2 overflow-hidden rounded-xl"
-                    style={{
-                      transform: `rotateY(${rotate}deg)`,
-                      transformOrigin: "center center",
-                    }}
                   >
                     <img
                       src={imgSrc}
@@ -164,7 +153,7 @@ function PortfolioPage() {
               100% { transform: translateX(-50%); }
             }
             .animate-scroll {
-              animation: marquee 15s linear infinite;
+              animation: marquee 40s linear infinite;
             }
             .animate-scroll:hover {
               animation-play-state: paused;

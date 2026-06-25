@@ -99,20 +99,62 @@ function PortfolioPage() {
 
           {/* Filter Buttons */}
           <div className="flex justify-center gap-3 mb-12 flex-wrap">
-            {categories.map(category => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-6 py-3 rounded-full text-sm font-medium transition-all border-2 ${
-                  activeCategory === category
-                    ? "bg-primary text-white border-primary shadow-glow"
-                    : "bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
+            <button
+              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-primary text-white border-primary shadow-glow"
+            >
+              Websites
+            </button>
+            <button
+              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+            >
+              Videos
+            </button>
+            <button
+              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+            >
+              Brandings
+            </button>
+            <button
+              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+            >
+              Graphic Design
+            </button>
+            <button
+              className="px-6 py-3 rounded-full text-sm font-medium transition-all border-2 bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+            >
+              SEO
+            </button>
           </div>
+
+          {/* Scrolling Banner */}
+          <div className="overflow-hidden mb-12 -mx-6">
+            <div className="flex gap-4 animate-scroll">
+              {/* Duplicate images for seamless scroll */}
+              {[
+                ...portfolioProjects,
+                ...portfolioProjects,
+                ...portfolioProjects,
+              ].map((project, i) => (
+                <div key={i} className="flex-shrink-0 w-80 h-48 overflow-hidden rounded-2xl">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <style>{`
+            @keyframes scroll {
+              0% { transform: translateX(0); }
+              100% { transform: translateX(-50%); }
+            }
+            .animate-scroll {
+              animation: scroll 30s linear infinite;
+            }
+          `}</style>
 
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

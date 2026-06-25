@@ -38,6 +38,7 @@ const portfolioProjects = [
     description: "Professional WordPress website for Leeper, featuring modern design and responsive layout.",
     tags: ["Business", "WordPress", "Corporate"],
     image: "/leeper.png",
+    hidden: true,
   },
   {
     id: "11",
@@ -47,6 +48,7 @@ const portfolioProjects = [
     tags: ["Consulting", "WordPress", "Professional"],
     image: "/mjhernon-co-uk.png",
     link: "https://mjhernon.co.uk/",
+    hidden: true,
   },
   {
     id: "12",
@@ -86,7 +88,7 @@ function PortfolioPage() {
   const [modalImage, setModalImage] = useState<string | null>(null);
 
   const filteredProjects = portfolioProjects.filter(project =>
-    activeCategory === "All" ? true : project.category === activeCategory
+    !project.hidden && (activeCategory === "All" ? true : project.category === activeCategory)
   );
 
   return (

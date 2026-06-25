@@ -21,9 +21,9 @@ export function Footer() {
           <div className="col-span-1">
             <h4 className="text-xs uppercase tracking-[0.2em] text-muted-foreground mb-4">Studio</h4>
             <ul className="space-y-2 text-sm">
-              <li><Link to="/portfolio" className="text-muted-foreground hover:text-foreground transition-colors">Work</Link></li>
-              <li><Link to="#" className="text-muted-foreground hover:text-foreground transition-colors">Process</Link></li>
-              <li><Link to="/#about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
+              <li><Link to="/portfolio" className="text-muted-foreground hover:text-foreground transition-colors">Portfolio</Link></li>
+              <li><Link to="/services" className="text-muted-foreground hover:text-foreground transition-colors">Services</Link></li>
+              <li><Link to="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
             </ul>
           </div>
 

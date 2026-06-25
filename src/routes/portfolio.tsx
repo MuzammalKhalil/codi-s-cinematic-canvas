@@ -3,7 +3,6 @@ import { Nav } from "@/components/portfolio/Nav";
 import { Footer } from "@/components/portfolio/Footer";
 import { CursorGlow } from "@/components/portfolio/CursorGlow";
 import { motion } from "framer-motion";
-import { useState } from "react";
 
 const portfolioProjects = [
   // WordPress Projects
@@ -58,8 +57,6 @@ const portfolioProjects = [
   },
 ];
 
-const categories = ["All", "WordPress"];
-
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
@@ -71,12 +68,6 @@ export const Route = createFileRoute("/portfolio")({
 });
 
 function PortfolioPage() {
-  const [activeCategory, setActiveCategory] = useState("All");
-
-  const filteredProjects = portfolioProjects.filter(project =>
-    activeCategory === "All" ? true : project.category === activeCategory
-  );
-
   return (
     <main className="relative noise min-h-screen">
       <CursorGlow />
@@ -94,26 +85,9 @@ function PortfolioPage() {
             <p className="text-muted-foreground">Organized by technology platform and industry</p>
           </motion.div>
 
-          {/* Filter Buttons */}
-          <div className="flex justify-center gap-3 mb-12 flex-wrap">
-            {categories.map(category => (
-              <button
-                key={category}
-                onClick={() => setActiveCategory(category)}
-                className={`px-4 py-2 rounded-full text-sm font-medium transition-all ${
-                  activeCategory === category
-                    ? "bg-primary text-primary-foreground shadow-glow"
-                    : "glass border border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
-                }`}
-              >
-                {category}
-              </button>
-            ))}
-          </div>
-
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredProjects.map((project, i) => {
+            {portfolioProjects.map((project, i) => {
               const CardContent = (
                 <motion.div
                   key={project.id}

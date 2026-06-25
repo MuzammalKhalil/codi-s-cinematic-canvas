@@ -47,6 +47,7 @@ const portfolioProjects = [
     description: "Elegant WordPress site for MJ Hernon, showcasing services and portfolio.",
     tags: ["Consulting", "WordPress", "Professional"],
     image: "/mjhernon-co-uk.png",
+    link: "https://mjhernon.co.uk/",
   },
   {
     id: "12",

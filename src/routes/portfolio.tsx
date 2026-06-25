@@ -102,11 +102,11 @@ function PortfolioPage() {
           </motion.div>
 
           {/* Banner Filter Buttons */}
-          <div className="flex justify-center gap-3 mb-12 flex-wrap">
+          <div className="flex justify-center gap-2 md:gap-3 mb-12 flex-wrap px-4">
             {["Websites", "Videos", "Brandings", "Graphic Design", "SEO"].map((category) => (
               <button
                 key={category}
-                className="px-6 py-3 rounded-full text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary hover:bg-primary hover:text-white"
+                className="px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-lg font-medium transition-all border-2 bg-transparent text-primary border-primary hover:bg-primary hover:text-white"
               >
                 {category}
               </button>
@@ -134,12 +134,12 @@ function PortfolioPage() {
                 return (
                   <div 
                     key={i} 
-                    className="flex-shrink-0 w-80 mx-2 overflow-hidden rounded-xl"
+                    className="flex-shrink-0 w-48 sm:w-64 md:w-80 mx-1 md:mx-2 overflow-hidden rounded-lg md:rounded-xl"
                   >
                     <img
                       src={imgSrc}
                       alt={`Banner ${i+1}`}
-                      className="w-full h-52 object-cover"
+                      className="w-full h-32 sm:h-40 md:h-52 object-cover"
                     />
                   </div>
                 );
@@ -161,15 +161,15 @@ function PortfolioPage() {
           `}</style>
 
           {/* Projects Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">Our Complete Portfolio</h2>
-            <p className="text-muted-foreground text-lg mb-8">Organized by technology platform and industry</p>
-            <div className="flex justify-center gap-3 flex-wrap">
+          <div className="text-center mb-12 px-4">
+            <h2 className="text-2xl md:text-4xl lg:text-5xl font-display font-bold mb-4">Our Complete Portfolio</h2>
+            <p className="text-muted-foreground text-base md:text-lg mb-6 md:mb-8">Organized by technology platform and industry</p>
+            <div className="flex justify-center gap-2 md:gap-3 flex-wrap">
               {["All", "Custom", "WordPress", "Woocommerce", "Shopify"].map((category) => (
                 <button
                   key={category}
                   onClick={() => setActiveCategory(category)}
-                  className={`px-6 py-3 rounded-full text-lg font-medium transition-all border-2 ${
+                  className={`px-4 py-2 md:px-6 md:py-3 rounded-full text-sm md:text-lg font-medium transition-all border-2 ${
                     activeCategory === category
                       ? "bg-primary text-white border-primary"
                       : "bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary"
@@ -182,7 +182,7 @@ function PortfolioPage() {
           </div>
 
           {/* Projects Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 lg:gap-8">
             {filteredProjects.map((project, i) => {
               return (
                 <motion.div

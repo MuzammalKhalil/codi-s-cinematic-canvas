@@ -63,6 +63,22 @@ const portfolioProjects = [
     tags: ["Pets", "WordPress", "Animals"],
     image: "/screencapture-taxi-crandendonc.png",
   },
+  {
+    id: "10",
+    category: "WordPress",
+    title: "Leeper",
+    description: "Professional WordPress website for Leeper, featuring modern design and responsive layout.",
+    tags: ["Business", "WordPress", "Corporate"],
+    image: "/leeper.png",
+  },
+  {
+    id: "11",
+    category: "WordPress",
+    title: "MJ Hernon",
+    description: "Elegant WordPress site for MJ Hernon, showcasing services and portfolio.",
+    tags: ["Consulting", "WordPress", "Professional"],
+    image: "/mjhernon-co-uk.png",
+  },
 ];
 
 const categories = ["All", "React", "E-commerce", "WordPress", "WebGL", "Mobile"];

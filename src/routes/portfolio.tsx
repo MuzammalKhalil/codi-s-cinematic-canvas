@@ -131,10 +131,25 @@ function PortfolioPage() {
             <div className="flex gap-8 animate-scroll items-end">
               {/* Duplicate images for seamless scroll */}
               {[
-                ...portfolioProjects,
-                ...portfolioProjects,
-                ...portfolioProjects,
-              ].map((project, i) => (
+                "/1.png",
+                "/2.png",
+                "/3.png",
+                "/4.png",
+                "/5.png",
+                "/6.png",
+                "/7.png",
+                "/8.png",
+                "/9.png",
+                "/1.png",
+                "/2.png",
+                "/3.png",
+                "/4.png",
+                "/5.png",
+                "/6.png",
+                "/7.png",
+                "/8.png",
+                "/9.png",
+              ].map((imgSrc, i) => (
                 <div 
                   key={i} 
                   className="flex-shrink-0 w-80 overflow-hidden rounded-2xl"
@@ -144,8 +159,8 @@ function PortfolioPage() {
                   }}
                 >
                   <img
-                    src={project.image}
-                    alt={project.title}
+                    src={imgSrc}
+                    alt={`Banner ${i+1}`}
                     className="w-full h-56 object-cover"
                   />
                 </div>

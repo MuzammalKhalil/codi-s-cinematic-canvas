@@ -4,6 +4,8 @@ import { Footer } from "@/components/portfolio/Footer";
 import { CursorGlow } from "@/components/portfolio/CursorGlow";
 import { motion } from "framer-motion";
 
+import { useState } from "react";
+
 const portfolioProjects = [
   // WordPress Projects
   {
@@ -57,6 +59,8 @@ const portfolioProjects = [
   },
 ];
 
+const categories = ["All", "HTML", "WordPress", "Woocommerce", "Shopify", "Squarespace"];
+
 export const Route = createFileRoute("/portfolio")({
   head: () => ({
     meta: [
@@ -68,6 +72,12 @@ export const Route = createFileRoute("/portfolio")({
 });
 
 function PortfolioPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredProjects = portfolioProjects.filter(project =>
+    activeCategory === "All" ? true : project.category === activeCategory
+  );
+
   return (
     <main className="relative noise min-h-screen">
       <CursorGlow />
@@ -81,16 +91,32 @@ function PortfolioPage() {
             transition={{ duration: 0.6 }}
             className="text-center mb-12"
           >
-            <p className="text-sm text-primary uppercase tracking-[0.2em] mb-2">Portfolio</p>
-            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">DISCOVER OUR WORK</h1>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Codi Tech specializes in web development, WordPress, and digital solutions. Explore our portfolio to see the work we've delivered for clients worldwide.
+            <h1 className="text-4xl md:text-6xl font-display font-bold mb-4">Our Complete Portfolio</h1>
+            <p className="text-muted-foreground max-w-2xl mx-auto mb-8">
+              Organized by technology platform and industry
             </p>
           </motion.div>
 
+          {/* Filter Buttons */}
+          <div className="flex justify-center gap-3 mb-12 flex-wrap">
+            {categories.map(category => (
+              <button
+                key={category}
+                onClick={() => setActiveCategory(category)}
+                className={`px-6 py-3 rounded-full text-sm font-medium transition-all border-2 ${
+                  activeCategory === category
+                    ? "bg-primary text-white border-primary shadow-glow"
+                    : "bg-transparent border-border text-muted-foreground hover:text-foreground hover:border-primary/50"
+                }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {portfolioProjects.map((project, i) => {
+            {filteredProjects.map((project, i) => {
               const CardContent = (
                 <motion.div
                   key={project.id}

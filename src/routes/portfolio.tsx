@@ -192,7 +192,7 @@ function PortfolioPage() {
           {/* Projects Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project, i) => {
-              const CardContent = (
+              return (
                 <motion.div
                   key={project.id}
                   initial={{ opacity: 0, y: 30 }}
@@ -253,21 +253,6 @@ function PortfolioPage() {
                   </div>
                 </motion.div>
               );
-
-              if (project.link) {
-                return (
-                  <a 
-                    key={project.id}
-                    href={project.link} 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="block"
-                  >
-                    {CardContent}
-                  </a>
-                );
-              }
-              return CardContent;
             })}
           </div>
         </div>

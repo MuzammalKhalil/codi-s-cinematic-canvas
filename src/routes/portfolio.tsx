@@ -162,7 +162,7 @@ function PortfolioPage() {
                     <img
                       src={imgSrc}
                       alt={`Banner ${i+1}`}
-                      className="w-full h-auto"
+                      className="w-full h-64 object-cover"
                     />
                   </div>
                 );
